@@ -18,6 +18,7 @@
             --btn-text: #334155;
             --shadow: rgba(0, 0, 0, 0.03);
             --sub-text: #64748b;
+            --link-color: #64748b;
         }
 
         /* Dark Mode Colors */
@@ -32,6 +33,7 @@
             --btn-text: #f8fafc;
             --shadow: rgba(0, 0, 0, 0.3);
             --sub-text: #94a3b8;
+            --link-color: #94a3b8;
         }
 
         * {
@@ -45,7 +47,7 @@
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
-            padding-bottom: 90px;
+            padding-bottom: 110px;
         }
 
         /* Top Header */
@@ -174,7 +176,7 @@
         .container {
             max-width: 600px;
             margin: 0 auto;
-            padding: 20px 15px;
+            padding: 20px 15px 0 15px;
         }
 
         /* Animated Notice Bar Style */
@@ -320,6 +322,44 @@
             padding: 20px;
             color: var(--sub-text);
             font-weight: 600;
+        }
+
+        /* Footer Section */
+        footer {
+            text-align: center;
+            padding: 25px 15px;
+            margin-top: 10px;
+        }
+
+        .copyright-text {
+            font-size: 0.85rem;
+            color: var(--sub-text);
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 8px 12px;
+            font-size: 0.85rem;
+        }
+
+        .footer-links a {
+            color: var(--link-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer-links a:hover {
+            color: #2563eb;
+        }
+
+        .footer-links span {
+            color: var(--sub-text);
+            opacity: 0.5;
         }
 
         /* Bottom Fixed Navigation */
@@ -472,6 +512,28 @@
 
         <div id="no-result">No apps found matching your search.</div>
     </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="copyright-text">
+            © EDITOR DOGO 2026
+        </div>
+        <div class="footer-links">
+            <a href="YOUR_TELEGRAM_LINK_HERE">About</a>
+            <span>|</span>
+            <a href="YOUR_TELEGRAM_LINK_HERE">Privacy Policy</a>
+            <span>|</span>
+            <a href="YOUR_TELEGRAM_LINK_HERE">Contact</a>
+            <span>|</span>
+            <a href="YOUR_TELEGRAM_LINK_HERE">DMCA</a>
+            <span>|</span>
+            <a href="YOUR_TELEGRAM_LINK_HERE">Disclaimer</a>
+            <span>|</span>
+            <a href="YOUR_TELEGRAM_LINK_HERE">Developer</a>
+            <span>|</span>
+            <a href="YOUR_TELEGRAM_LINK_HERE">Telegram</a>
+        </div>
+    </footer>
 
     <!-- Bottom Navigation Bar -->
     <div class="bottom-nav">
