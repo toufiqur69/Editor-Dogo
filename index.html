@@ -80,8 +80,40 @@
             text-decoration: none;
             font-weight: 600;
             font-size: 0.95rem;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             box-shadow: 0 4px 15px rgba(99, 102, 241, 0.25);
+        }
+
+        /* Search Bar Style */
+        .search-box {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 14px 20px 14px 45px;
+            border-radius: 50px;
+            border: 1px solid #e2e8f0;
+            outline: none;
+            font-size: 0.95rem;
+            background: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+        }
+
+        .search-box input:focus {
+            border-color: #2563eb;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.15);
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94a3b8;
+            font-size: 1rem;
         }
 
         /* Section Title */
@@ -160,6 +192,15 @@
             font-size: 0.7rem;
         }
 
+        /* No Result Message */
+        #no-result {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            color: #64748b;
+            font-weight: 600;
+        }
+
         /* Bottom Fixed Navigation */
         .bottom-nav {
             position: fixed;
@@ -214,15 +255,21 @@
         <!-- Notice Bar -->
         <a href="YOUR_TELEGRAM_LINK_HERE" class="notice-bar">
             <span>টেলিগ্রাম চ্যানেলে জয়েন করুন</span>
-            <span>👆</span>
+            <span>👇</span>
         </a>
+
+        <!-- Search Bar -->
+        <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="searchInput" onkeyup="searchApps()" placeholder="Search apps...">
+        </div>
 
         <!-- Trending Apps Section -->
         <div class="section-title">
             Trending Apps (6)
         </div>
 
-        <div class="apps-grid">
+        <div class="apps-grid" id="appsContainer">
             <!-- App 1: CapCut Pro -->
             <a href="YOUR_TELEGRAM_LINK_HERE" class="app-card">
                 <div class="app-icon capcut-bg">
@@ -269,6 +316,9 @@
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </a>
         </div>
+
+        <!-- No Result Found Message -->
+        <div id="no-result">No apps found matching your search.</div>
     </div>
 
     <!-- Bottom Navigation Bar -->
@@ -287,5 +337,31 @@
         </a>
     </div>
 
+    <!-- Search JavaScript Functionality -->
+    <script>
+        function searchApps() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let cards = document.getElementsByClassName('app-card');
+            let hasResult = false;
+
+            for (let i = 0; i < cards.length; i++) {
+                let appName = cards[i].getElementsByClassName('app-name')[0].innerText.toLowerCase();
+                
+                if (appName.includes(input)) {
+                    cards[i].style.display = "flex";
+                    hasResult = true;
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+
+            let noResultDiv = document.getElementById('no-result');
+            if (hasResult) {
+                noResultDiv.style.display = "none";
+            } else {
+                noResultDiv.style.display = "block";
+            }
+        }
+    </script>
 </body>
 </html>
