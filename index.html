@@ -1,5 +1,7 @@
+এখানে টেলিগ্রামের ওপরের নোটিশ বারটি পরিবর্তন করে ইমেজ অনুযায়ী একদম ডার্ক থিমের ক্লাসি ওয়েলকাম/নোটিশ বার যুক্ত করে দেওয়া হয়েছে। এটি এখন সার্চ বারের ঠিক নিচে বসানো হয়েছে।
+পুরো আপডেট করা HTML কোডটি নিচে দেওয়া হলো:
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +10,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
+            --bg-color: #0d1117;
+            --text-color: #f8fafc;
+            --card-bg: #161b22;
+            --border-color: #21262d;
+            --header-bg: #161b22;
+            --title-color: #cbd5e1;
+            --btn-bg: #21262d;
+            --btn-text: #f8fafc;
+            --shadow: rgba(0, 0, 0, 0.4);
+            --sub-text: #8b949e;
+            --link-color: #8b949e;
+            --accent-green: #2ea043;
+        }
+
+        body.light-theme {
             --bg-color: #f4f6fb;
             --text-color: #1e293b;
             --card-bg: #ffffff;
@@ -16,24 +33,9 @@
             --title-color: #334155;
             --btn-bg: #f1f5f9;
             --btn-text: #334155;
-            --shadow: rgba(0, 0, 0, 0.03);
+            --shadow: rgba(0, 0, 0, 0.05);
             --sub-text: #64748b;
             --link-color: #64748b;
-        }
-
-        /* Dark Mode Colors */
-        body.dark-theme {
-            --bg-color: #0f172a;
-            --text-color: #f8fafc;
-            --card-bg: #1e293b;
-            --border-color: #334155;
-            --header-bg: #1e293b;
-            --title-color: #cbd5e1;
-            --btn-bg: #334155;
-            --btn-text: #f8fafc;
-            --shadow: rgba(0, 0, 0, 0.3);
-            --sub-text: #94a3b8;
-            --link-color: #94a3b8;
         }
 
         * {
@@ -99,7 +101,6 @@
             box-shadow: 0 2px 8px rgba(0, 136, 204, 0.3);
         }
 
-        /* Theme Toggle Button & Menu Button */
         .icon-btn {
             background: var(--btn-bg);
             color: var(--btn-text);
@@ -118,7 +119,7 @@
             transform: scale(0.95);
         }
 
-        /* Dropdown Popup Menu */
+        /* Dropdown Menu */
         .dropdown-menu {
             position: absolute;
             top: 50px;
@@ -126,18 +127,12 @@
             background: var(--card-bg);
             width: 200px;
             border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             border: 1px solid var(--border-color);
             padding: 8px 0;
             display: none;
             flex-direction: column;
             z-index: 200;
-            animation: fadeIn 0.2s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-8px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         .dropdown-menu.active {
@@ -161,10 +156,6 @@
             border-bottom: none;
         }
 
-        .menu-item .fa-house { color: #10b981; }
-        .menu-item .fa-border-all { color: #3b82f6; }
-        .menu-item .fa-paper-plane { color: #0088cc; }
-
         .menu-footer {
             font-size: 0.7rem;
             color: var(--sub-text);
@@ -180,49 +171,16 @@
             padding: 20px 15px 0 15px;
         }
 
-        /* Animated Notice Bar Style */
-        .notice-bar {
-            background: linear-gradient(135deg, #8b5cf6, #6366f1);
-            color: #ffffff;
-            padding: 12px 16px;
-            border-radius: 50px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.25);
-            overflow: hidden;
-        }
-
-        .notice-icon {
-            background: rgba(255, 255, 255, 0.2);
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.9rem;
-            flex-shrink: 0;
-        }
-
-        .notice-bar marquee {
-            font-weight: 600;
-            font-size: 0.9rem;
-            white-space: nowrap;
-        }
-
         /* Search Bar Style */
         .search-box {
             position: relative;
-            margin-bottom: 25px;
+            margin-bottom: 15px;
         }
 
         .search-box input {
             width: 100%;
             padding: 14px 20px 14px 45px;
-            border-radius: 50px;
+            border-radius: 14px;
             border: 1px solid var(--border-color);
             outline: none;
             font-size: 0.95rem;
@@ -242,6 +200,37 @@
             transform: translateY(-50%);
             color: var(--sub-text);
             font-size: 1rem;
+        }
+
+        /* New Welcome Bar Style (Matching Screenshot) */
+        .welcome-bar {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 14px 18px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px var(--shadow);
+        }
+
+        .welcome-icon {
+            color: var(--accent-green);
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .welcome-text {
+            color: var(--sub-text);
+            font-size: 0.9rem;
+            font-weight: 500;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         /* Section Title */
@@ -354,10 +343,6 @@
             font-weight: 500;
         }
 
-        .footer-links a:hover {
-            color: #2563eb;
-        }
-
         .footer-links span {
             color: var(--sub-text);
             opacity: 0.5;
@@ -377,7 +362,7 @@
             display: flex;
             justify-content: space-around;
             align-items: center;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
             border: 1px solid var(--border-color);
         }
 
@@ -429,13 +414,13 @@
             <!-- Dropdown Popup Menu -->
             <div class="dropdown-menu" id="dropdownMenu">
                 <div class="menu-item" onclick="filterCategory('trending')">
-                    <i class="fa-solid fa-house"></i> Home
+                    <i class="fa-solid fa-house" style="color: #10b981;"></i> Home
                 </div>
                 <div class="menu-item" onclick="filterCategory('all')">
-                    <i class="fa-solid fa-border-all"></i> All Apps
+                    <i class="fa-solid fa-border-all" style="color: #3b82f6;"></i> All Apps
                 </div>
                 <a href="YOUR_TELEGRAM_LINK_HERE" class="menu-item">
-                    <i class="fa-solid fa-paper-plane"></i> Join Telegram
+                    <i class="fa-solid fa-paper-plane" style="color: #0088cc;"></i> Join Telegram
                 </a>
                 <div class="menu-footer">© EDITOR DOGO 2026</div>
             </div>
@@ -443,20 +428,20 @@
     </header>
 
     <div class="container">
-        <!-- Animated Notice Bar Moving Left -->
-        <a href="YOUR_TELEGRAM_LINK_HERE" class="notice-bar">
-            <div class="notice-icon">
-                <i class="fa-solid fa-bullhorn"></i>
-            </div>
-            <marquee direction="left" scrollamount="5" behavior="scroll">
-                যে কোন প্রকার প্রিমিয়ার মেন্স একদম ফ্রিতে পেতে আমাদের টেলিগ্রাম চ্যানেলে জয়েন করুন।
-            </marquee>
-        </a>
-
         <!-- Search Bar -->
         <div class="search-box">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" id="searchInput" onkeyup="searchApps()" placeholder="Search apps...">
+            <input type="text" id="searchInput" onkeyup="searchApps()" placeholder="Search....">
+        </div>
+
+        <!-- New Welcome Notification Bar (Under Search Bar) -->
+        <div class="welcome-bar">
+            <div class="welcome-icon">
+                <i class="fa-regular fa-bell"></i>
+            </div>
+            <div class="welcome-text">
+                Welcome to our Website
+            </div>
         </div>
 
         <!-- Section Title -->
@@ -512,7 +497,7 @@
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </a>
 
-            <!-- Additional Apps shown only in "All Apps" -->
+            <!-- Additional Apps -->
             <a href="YOUR_TELEGRAM_LINK_HERE" class="app-card extra-app" style="display: none;">
                 <img src="https://cdn-icons-png.flaticon.com/512/3076/3076416.png" class="app-icon" alt="PicsArt">
                 <div class="app-name">PicsArt Pro</div>
@@ -565,7 +550,7 @@
         </div>
         <div class="nav-item" id="navAllApps" onclick="filterCategory('all')">
             <i class="fa-solid fa-border-all nav-icon"></i>
-            All Apps
+            Apps
         </div>
         <a href="YOUR_TELEGRAM_LINK_HERE" class="nav-item">
             <i class="fa-brands fa-telegram nav-icon"></i>
@@ -573,38 +558,34 @@
         </a>
     </div>
 
-    <!-- JavaScript Functionality -->
+    <!-- JavaScript -->
     <script>
-        // Toggle Dark/Light Theme
         function toggleTheme() {
-            document.body.classList.toggle('dark-theme');
+            document.body.classList.toggle('light-theme');
             const themeBtnIcon = document.querySelector('#themeBtn i');
             
-            if (document.body.classList.contains('dark-theme')) {
-                themeBtnIcon.className = 'fa-solid fa-sun';
-                localStorage.setItem('theme', 'dark');
-            } else {
+            if (document.body.classList.contains('light-theme')) {
                 themeBtnIcon.className = 'fa-solid fa-moon';
                 localStorage.setItem('theme', 'light');
+            } else {
+                themeBtnIcon.className = 'fa-solid fa-sun';
+                localStorage.setItem('theme', 'dark');
             }
         }
 
-        // Save User Theme Preference
         window.onload = function() {
             const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'dark') {
-                document.body.classList.add('dark-theme');
-                document.querySelector('#themeBtn i').className = 'fa-solid fa-sun';
+            if (savedTheme === 'light') {
+                document.body.classList.add('light-theme');
+                document.querySelector('#themeBtn i').className = 'fa-solid fa-moon';
             }
         };
 
-        // Toggle Dropdown Menu
         function toggleMenu() {
             const menu = document.getElementById('dropdownMenu');
             menu.classList.toggle('active');
         }
 
-        // Close Menu when clicked outside
         window.onclick = function(event) {
             if (!event.target.closest('.icon-btn') && !event.target.closest('.dropdown-menu')) {
                 const dropdowns = document.getElementsByClassName("dropdown-menu");
@@ -614,7 +595,6 @@
             }
         }
 
-        // Filter Apps Function
         function filterCategory(type) {
             let cards = document.getElementsByClassName('app-card');
             let title = document.getElementById('sectionTitle');
@@ -622,7 +602,6 @@
             let navAllApps = document.getElementById('navAllApps');
             let menu = document.getElementById('dropdownMenu');
 
-            // Close dropdown menu if open
             menu.classList.remove('active');
 
             if (type === 'all') {
@@ -652,7 +631,6 @@
             }
         }
 
-        // Search Apps
         function searchApps() {
             let input = document.getElementById('searchInput').value.toLowerCase();
             let cards = document.getElementsByClassName('app-card');
@@ -675,3 +653,4 @@
     </script>
 </body>
 </html>
+
