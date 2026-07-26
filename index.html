@@ -177,20 +177,37 @@
             padding: 20px 15px;
         }
 
-        /* Notice Bar */
+        /* Animated Notice Bar Style */
         .notice-bar {
             background: linear-gradient(135deg, #8b5cf6, #6366f1);
             color: #ffffff;
-            padding: 14px 20px;
-            border-radius: 16px;
+            padding: 12px 16px;
+            border-radius: 50px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            gap: 10px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
             margin-bottom: 20px;
             box-shadow: 0 4px 15px rgba(99, 102, 241, 0.25);
+            overflow: hidden;
+        }
+
+        .notice-icon {
+            background: rgba(255, 255, 255, 0.2);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .notice-bar marquee {
+            font-weight: 600;
+            font-size: 0.9rem;
+            white-space: nowrap;
         }
 
         /* Search Bar Style */
@@ -384,10 +401,14 @@
     </header>
 
     <div class="container">
-        <!-- Notice Bar -->
+        <!-- Animated Notice Bar Moving Right -->
         <a href="YOUR_TELEGRAM_LINK_HERE" class="notice-bar">
-            <span>টেলিগ্রাম চ্যানেলে জয়েন করুন</span>
-            <span>👇</span>
+            <div class="notice-icon">
+                <i class="fa-solid fa-bullhorn"></i>
+            </div>
+            <marquee direction="right" scrollamount="5" behavior="scroll">
+                যে কোন প্রকার প্রিমিয়ার মেন্স একদম ফ্রিতে পেতে আমাদের টেলিগ্রাম চ্যানেলে জয়েন করুন।
+            </marquee>
         </a>
 
         <!-- Search Bar -->
