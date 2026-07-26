@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editor-Dogo</title>
-    <!-- FontAwesome PNG/Icons CDN -->
+    <title>EDITOR DOGO</title>
+    <!-- FontAwesome Vector Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -41,6 +41,7 @@
             align-items: center;
             gap: 8px;
             text-decoration: none;
+            letter-spacing: 0.5px;
         }
 
         .brand-logo span {
@@ -57,7 +58,7 @@
             font-weight: 600;
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 6px;
         }
 
         /* Container */
@@ -130,6 +131,21 @@
             margin-bottom: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
             object-fit: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .capcut-bg {
+            background: #000000;
+            color: #ffffff;
+            font-size: 28px;
+        }
+
+        .inshot-bg {
+            background: linear-gradient(135deg, #ff4b5c, #ff6b81);
+            color: #ffffff;
+            font-size: 28px;
         }
 
         .app-name {
@@ -177,10 +193,8 @@
             color: #2563eb;
         }
 
-        .nav-icon-img {
-            width: 22px;
-            height: 22px;
-            object-fit: contain;
+        .nav-icon {
+            font-size: 1.2rem;
         }
     </style>
 </head>
@@ -189,10 +203,10 @@
     <!-- Header -->
     <header>
         <a href="YOUR_TELEGRAM_LINK_HERE" class="brand-logo">
-            <span>Editor</span>-Dogo
+            <span>EDITOR</span> DOGO
         </a>
         <a href="YOUR_TELEGRAM_LINK_HERE" class="tg-header-btn">
-            Telegram
+            <i class="fa-brands fa-telegram"></i> Telegram
         </a>
     </header>
 
@@ -211,60 +225,64 @@
         <div class="apps-grid">
             <!-- App 1: CapCut Pro -->
             <a href="YOUR_TELEGRAM_LINK_HERE" class="app-card">
-                <img src="https://assets.stickpng.com/thumbs/624976774e1d6e191a27e7f9.png" class="app-icon" alt="CapCut" onerror="this.src='https://api.iconify.design/logos:capcut.svg'">
+                <div class="app-icon capcut-bg">
+                    <i class="fa-solid fa-scissors"></i>
+                </div>
                 <div class="app-name">CapCut Pro</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </a>
 
             <!-- App 2: YouTube Lite -->
             <a href="YOUR_TELEGRAM_LINK_HERE" class="app-card">
-                <img src="https://api.iconify.design/logos:youtube-icon.svg" class="app-icon" alt="YouTube">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" class="app-icon" alt="YouTube">
                 <div class="app-name">YouTube Lite</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </a>
 
             <!-- App 3: InShot Pro -->
             <a href="YOUR_TELEGRAM_LINK_HERE" class="app-card">
-                <img src="https://api.iconify.design/simple-icons:inshot.svg?color=%23ff4757" class="app-icon" alt="InShot">
+                <div class="app-icon inshot-bg">
+                    <i class="fa-solid fa-video"></i>
+                </div>
                 <div class="app-name">InShot Pro</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </a>
 
             <!-- App 4: Remini Pro -->
             <a href="YOUR_TELEGRAM_LINK_HERE" class="app-card">
-                <img src="https://api.iconify.design/emojione-v1:glowing-star.svg" class="app-icon" alt="Remini">
+                <img src="https://img.icons8.com/fluency/512/sparkling.png" class="app-icon" alt="Remini">
                 <div class="app-name">Remini Pro</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </a>
 
             <!-- App 5: Lightroom Pro -->
             <a href="YOUR_TELEGRAM_LINK_HERE" class="app-card">
-                <img src="https://api.iconify.design/logos:adobe-lightroom.svg" class="app-icon" alt="Lightroom">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Adobe_Photoshop_Lightroom_CC_logo.svg" class="app-icon" alt="Lightroom">
                 <div class="app-name">Lightroom Pro</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </a>
 
             <!-- App 6: Telegram Pro -->
             <a href="YOUR_TELEGRAM_LINK_HERE" class="app-card">
-                <img src="https://api.iconify.design/logos:telegram.svg" class="app-icon" alt="Telegram">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" class="app-icon" alt="Telegram">
                 <div class="app-name">Telegram Pro</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </a>
         </div>
     </div>
 
-    <!-- Bottom Navigation Bar with Icons -->
+    <!-- Bottom Navigation Bar -->
     <div class="bottom-nav">
         <a href="YOUR_TELEGRAM_LINK_HERE" class="nav-item active">
-            <img src="https://api.iconify.design/fluent-emoji-flat:house.svg" class="nav-icon-img" alt="Home">
+            <i class="fa-solid fa-house nav-icon"></i>
             Home
         </a>
         <a href="YOUR_TELEGRAM_LINK_HERE" class="nav-item">
-            <img src="https://api.iconify.design/fluent-emoji-flat:grid.svg" class="nav-icon-img" alt="All Apps">
+            <i class="fa-solid fa-border-all nav-icon"></i>
             All Apps
         </a>
         <a href="YOUR_TELEGRAM_LINK_HERE" class="nav-item">
-            <img src="https://api.iconify.design/logos:telegram.svg" class="nav-icon-img" alt="Channel">
+            <i class="fa-brands fa-telegram nav-icon"></i>
             Channel
         </a>
     </div>
