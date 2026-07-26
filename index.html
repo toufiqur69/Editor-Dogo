@@ -7,27 +7,55 @@
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --bg-color: #f4f6fb;
+            --text-color: #1e293b;
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+            --header-bg: #ffffff;
+            --title-color: #334155;
+            --btn-bg: #f1f5f9;
+            --btn-text: #334155;
+            --shadow: rgba(0, 0, 0, 0.03);
+            --sub-text: #64748b;
+        }
+
+        /* Dark Mode Colors */
+        body.dark-theme {
+            --bg-color: #0f172a;
+            --text-color: #f8fafc;
+            --card-bg: #1e293b;
+            --border-color: #334155;
+            --header-bg: #1e293b;
+            --title-color: #cbd5e1;
+            --btn-bg: #334155;
+            --btn-text: #f8fafc;
+            --shadow: rgba(0, 0, 0, 0.3);
+            --sub-text: #94a3b8;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
         }
 
         body {
-            background-color: #f4f6fb;
-            color: #1e293b;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             padding-bottom: 90px;
         }
 
         /* Top Header */
         header {
-            background: #ffffff;
+            background: var(--header-bg);
             padding: 12px 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+            box-shadow: 0 2px 10px var(--shadow);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -36,7 +64,7 @@
         .brand-logo {
             font-size: 1.2rem;
             font-weight: 800;
-            color: #0f172a;
+            color: var(--text-color);
             display: flex;
             align-items: center;
             gap: 8px;
@@ -69,10 +97,10 @@
             box-shadow: 0 2px 8px rgba(0, 136, 204, 0.3);
         }
 
-        /* Menu Button Style */
-        .menu-btn {
-            background: #f1f5f9;
-            color: #334155;
+        /* Theme Toggle Button & Menu Button */
+        .icon-btn {
+            background: var(--btn-bg);
+            color: var(--btn-text);
             width: 38px;
             height: 38px;
             border-radius: 50%;
@@ -82,23 +110,22 @@
             justify-content: center;
             font-size: 1.1rem;
             cursor: pointer;
-            transition: background 0.2s;
         }
 
-        .menu-btn:active {
-            background: #e2e8f0;
+        .icon-btn:active {
+            transform: scale(0.95);
         }
 
-        /* Popup Dropdown Menu */
+        /* Dropdown Popup Menu */
         .dropdown-menu {
             position: absolute;
             top: 50px;
             right: 0;
-            background: #ffffff;
+            background: var(--card-bg);
             width: 200px;
             border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-            border: 1px solid #e2e8f0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border-color);
             padding: 8px 0;
             display: none;
             flex-direction: column;
@@ -121,29 +148,23 @@
             gap: 12px;
             padding: 12px 18px;
             text-decoration: none;
-            color: #334155;
+            color: var(--text-color);
             font-size: 0.9rem;
             font-weight: 600;
-            transition: background 0.2s;
-            border-bottom: 1px solid #f1f5f9;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .menu-item:last-child {
             border-bottom: none;
         }
 
-        .menu-item:hover {
-            background: #f8fafc;
-        }
-
-        /* Colored Menu Icons */
         .menu-item .fa-house { color: #10b981; }
         .menu-item .fa-border-all { color: #3b82f6; }
         .menu-item .fa-paper-plane { color: #0088cc; }
 
         .menu-footer {
             font-size: 0.7rem;
-            color: #94a3b8;
+            color: var(--sub-text);
             text-align: center;
             padding: 8px 0 4px 0;
             font-weight: 500;
@@ -156,7 +177,7 @@
             padding: 20px 15px;
         }
 
-        /* Telegram Notice Bar */
+        /* Notice Bar */
         .notice-bar {
             background: linear-gradient(135deg, #8b5cf6, #6366f1);
             color: #ffffff;
@@ -182,17 +203,16 @@
             width: 100%;
             padding: 14px 20px 14px 45px;
             border-radius: 50px;
-            border: 1px solid #e2e8f0;
+            border: 1px solid var(--border-color);
             outline: none;
             font-size: 0.95rem;
-            background: #ffffff;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-            transition: all 0.3s ease;
+            background: var(--card-bg);
+            color: var(--text-color);
+            box-shadow: 0 4px 12px var(--shadow);
         }
 
         .search-box input:focus {
             border-color: #2563eb;
-            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.15);
         }
 
         .search-box i {
@@ -200,7 +220,7 @@
             left: 18px;
             top: 50%;
             transform: translateY(-50%);
-            color: #94a3b8;
+            color: var(--sub-text);
             font-size: 1rem;
         }
 
@@ -208,14 +228,14 @@
         .section-title {
             font-size: 1.1rem;
             font-weight: 700;
-            color: #334155;
+            color: var(--title-color);
             margin-bottom: 15px;
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
-        /* Apps Horizontal Grid */
+        /* Apps Grid */
         .apps-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -223,17 +243,15 @@
             margin-bottom: 30px;
         }
 
-        /* App Card */
         .app-card {
-            background: #ffffff;
+            background: var(--card-bg);
             border-radius: 20px;
             padding: 15px 10px;
             text-align: center;
             text-decoration: none;
             color: inherit;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-            border: 1px solid #e2e8f0;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 15px var(--shadow);
+            border: 1px solid var(--border-color);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -243,7 +261,6 @@
             transform: scale(0.96);
         }
 
-        /* App Real Logo Styling */
         .app-icon {
             width: 65px;
             height: 65px;
@@ -271,7 +288,7 @@
         .app-name {
             font-size: 0.85rem;
             font-weight: 700;
-            color: #1e293b;
+            color: var(--text-color);
             margin-bottom: 4px;
         }
 
@@ -280,12 +297,11 @@
             font-size: 0.7rem;
         }
 
-        /* No Result Message */
         #no-result {
             display: none;
             text-align: center;
             padding: 20px;
-            color: #64748b;
+            color: var(--sub-text);
             font-weight: 600;
         }
 
@@ -297,19 +313,19 @@
             transform: translateX(-50%);
             width: calc(100% - 30px);
             max-width: 450px;
-            background: #ffffff;
+            background: var(--card-bg);
             border-radius: 50px;
             padding: 10px 20px;
             display: flex;
             justify-content: space-around;
             align-items: center;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e2e8f0;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            border: 1px solid var(--border-color);
         }
 
         .nav-item {
             text-decoration: none;
-            color: #64748b;
+            color: var(--sub-text);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -336,12 +352,18 @@
         </a>
         
         <div class="header-actions">
+            <!-- Theme Toggle Button -->
+            <button class="icon-btn" id="themeBtn" onclick="toggleTheme()">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+
+            <!-- Telegram Link -->
             <a href="YOUR_TELEGRAM_LINK_HERE" class="tg-header-btn">
                 <i class="fa-brands fa-telegram"></i>
             </a>
             
             <!-- Three Bar Button -->
-            <button class="menu-btn" onclick="toggleMenu()">
+            <button class="icon-btn" onclick="toggleMenu()">
                 <i class="fa-solid fa-bars"></i>
             </button>
 
@@ -427,7 +449,6 @@
             </a>
         </div>
 
-        <!-- No Result Found Message -->
         <div id="no-result">No apps found matching your search.</div>
     </div>
 
@@ -449,6 +470,29 @@
 
     <!-- JavaScript Functionality -->
     <script>
+        // Toggle Dark/Light Theme
+        function toggleTheme() {
+            document.body.classList.toggle('dark-theme');
+            const themeBtnIcon = document.querySelector('#themeBtn i');
+            
+            if (document.body.classList.contains('dark-theme')) {
+                themeBtnIcon.className = 'fa-solid fa-sun';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                themeBtnIcon.className = 'fa-solid fa-moon';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Save User Theme Preference
+        window.onload = function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-theme');
+                document.querySelector('#themeBtn i').className = 'fa-solid fa-sun';
+            }
+        };
+
         // Toggle Dropdown Menu
         function toggleMenu() {
             const menu = document.getElementById('dropdownMenu');
@@ -457,13 +501,10 @@
 
         // Close Menu when clicked outside
         window.onclick = function(event) {
-            if (!event.target.matches('.menu-btn') && !event.target.matches('.fa-bars')) {
+            if (!event.target.closest('.icon-btn') && !event.target.closest('.dropdown-menu')) {
                 const dropdowns = document.getElementsByClassName("dropdown-menu");
                 for (let i = 0; i < dropdowns.length; i++) {
-                    let openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('active')) {
-                        openDropdown.classList.remove('active');
-                    }
+                    dropdowns[i].classList.remove('active');
                 }
             }
         }
@@ -486,11 +527,7 @@
             }
 
             let noResultDiv = document.getElementById('no-result');
-            if (hasResult) {
-                noResultDiv.style.display = "none";
-            } else {
-                noResultDiv.style.display = "block";
-            }
+            noResultDiv.style.display = hasResult ? "none" : "block";
         }
     </script>
 </body>
