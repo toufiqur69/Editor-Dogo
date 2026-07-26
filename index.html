@@ -154,6 +154,7 @@
             font-size: 0.9rem;
             font-weight: 600;
             border-bottom: 1px solid var(--border-color);
+            cursor: pointer;
         }
 
         .menu-item:last-child {
@@ -389,6 +390,7 @@
             font-size: 0.75rem;
             font-weight: 600;
             gap: 4px;
+            cursor: pointer;
         }
 
         .nav-item.active {
@@ -426,12 +428,12 @@
 
             <!-- Dropdown Popup Menu -->
             <div class="dropdown-menu" id="dropdownMenu">
-                <a href="YOUR_TELEGRAM_LINK_HERE" class="menu-item">
+                <div class="menu-item" onclick="filterCategory('trending')">
                     <i class="fa-solid fa-house"></i> Home
-                </a>
-                <a href="YOUR_TELEGRAM_LINK_HERE" class="menu-item">
+                </div>
+                <div class="menu-item" onclick="filterCategory('all')">
                     <i class="fa-solid fa-border-all"></i> All Apps
-                </a>
+                </div>
                 <a href="YOUR_TELEGRAM_LINK_HERE" class="menu-item">
                     <i class="fa-solid fa-paper-plane"></i> Join Telegram
                 </a>
@@ -457,14 +459,15 @@
             <input type="text" id="searchInput" onkeyup="searchApps()" placeholder="Search apps...">
         </div>
 
-        <!-- Trending Apps Section -->
-        <div class="section-title">
+        <!-- Section Title -->
+        <div class="section-title" id="sectionTitle">
             Trending Apps (6)
         </div>
 
+        <!-- Apps Grid -->
         <div class="apps-grid" id="appsContainer">
             <!-- App 1: CapCut Pro -->
-            <a href="YOUR_TELEGRAM_LINK_HERE" class="app-card">
+            <a href="YOUR_TELEGRAM_LINK_HERE" class="app-card trending">
                 <div class="app-icon capcut-bg">
                     <i class="fa-solid fa-scissors"></i>
                 </div>
@@ -473,14 +476,14 @@
             </a>
 
             <!-- App 2: YouTube Lite -->
-            <a href="YOUR_TELEGRAM_LINK_HERE" class="app-card">
+            <a href="YOUR_TELEGRAM_LINK_HERE" class="app-card trending">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" class="app-icon" alt="YouTube">
                 <div class="app-name">YouTube Lite</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </a>
 
             <!-- App 3: InShot Pro -->
-            <a href="YOUR_TELEGRAM_LINK_HERE" class="app-card">
+            <a href="YOUR_TELEGRAM_LINK_HERE" class="app-card trending">
                 <div class="app-icon inshot-bg">
                     <i class="fa-solid fa-video"></i>
                 </div>
@@ -489,23 +492,42 @@
             </a>
 
             <!-- App 4: Remini Pro -->
-            <a href="YOUR_TELEGRAM_LINK_HERE" class="app-card">
+            <a href="YOUR_TELEGRAM_LINK_HERE" class="app-card trending">
                 <img src="https://cdn-icons-png.flaticon.com/512/668/668288.png" class="app-icon" alt="Remini">
                 <div class="app-name">Remini Pro</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </a>
 
             <!-- App 5: Lightroom Pro -->
-            <a href="YOUR_TELEGRAM_LINK_HERE" class="app-card">
+            <a href="YOUR_TELEGRAM_LINK_HERE" class="app-card trending">
                 <img src="https://cdn-icons-png.flaticon.com/512/5968/5968503.png" class="app-icon" alt="Lightroom">
                 <div class="app-name">Lightroom Pro</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </a>
 
             <!-- App 6: Telegram Pro -->
-            <a href="YOUR_TELEGRAM_LINK_HERE" class="app-card">
+            <a href="YOUR_TELEGRAM_LINK_HERE" class="app-card trending">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" class="app-icon" alt="Telegram">
                 <div class="app-name">Telegram Pro</div>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+            </a>
+
+            <!-- Additional Apps shown only in "All Apps" -->
+            <a href="YOUR_TELEGRAM_LINK_HERE" class="app-card extra-app" style="display: none;">
+                <img src="https://cdn-icons-png.flaticon.com/512/3076/3076416.png" class="app-icon" alt="PicsArt">
+                <div class="app-name">PicsArt Pro</div>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+            </a>
+
+            <a href="YOUR_TELEGRAM_LINK_HERE" class="app-card extra-app" style="display: none;">
+                <img src="https://cdn-icons-png.flaticon.com/512/3938/3938025.png" class="app-icon" alt="Kinemaster">
+                <div class="app-name">KineMaster Pro</div>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+            </a>
+
+            <a href="YOUR_TELEGRAM_LINK_HERE" class="app-card extra-app" style="display: none;">
+                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="app-icon" alt="Instagram">
+                <div class="app-name">Instagram Pro</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </a>
         </div>
@@ -537,14 +559,14 @@
 
     <!-- Bottom Navigation Bar -->
     <div class="bottom-nav">
-        <a href="YOUR_TELEGRAM_LINK_HERE" class="nav-item active">
+        <div class="nav-item active" id="navHome" onclick="filterCategory('trending')">
             <i class="fa-solid fa-house nav-icon"></i>
             Home
-        </a>
-        <a href="YOUR_TELEGRAM_LINK_HERE" class="nav-item">
+        </div>
+        <div class="nav-item" id="navAllApps" onclick="filterCategory('all')">
             <i class="fa-solid fa-border-all nav-icon"></i>
             All Apps
-        </a>
+        </div>
         <a href="YOUR_TELEGRAM_LINK_HERE" class="nav-item">
             <i class="fa-brands fa-telegram nav-icon"></i>
             Telegram
@@ -588,6 +610,44 @@
                 const dropdowns = document.getElementsByClassName("dropdown-menu");
                 for (let i = 0; i < dropdowns.length; i++) {
                     dropdowns[i].classList.remove('active');
+                }
+            }
+        }
+
+        // Filter Apps Function
+        function filterCategory(type) {
+            let cards = document.getElementsByClassName('app-card');
+            let title = document.getElementById('sectionTitle');
+            let navHome = document.getElementById('navHome');
+            let navAllApps = document.getElementById('navAllApps');
+            let menu = document.getElementById('dropdownMenu');
+
+            // Close dropdown menu if open
+            menu.classList.remove('active');
+
+            if (type === 'all') {
+                let totalApps = cards.length;
+                title.innerText = `All Apps (${totalApps})`;
+                
+                navAllApps.classList.add('active');
+                navHome.classList.remove('active');
+
+                for (let i = 0; i < cards.length; i++) {
+                    cards[i].style.display = "flex";
+                }
+            } else {
+                let trendingCount = document.getElementsByClassName('trending').length;
+                title.innerText = `Trending Apps (${trendingCount})`;
+
+                navHome.classList.add('active');
+                navAllApps.classList.remove('active');
+
+                for (let i = 0; i < cards.length; i++) {
+                    if (cards[i].classList.contains('trending')) {
+                        cards[i].style.display = "flex";
+                    } else {
+                        cards[i].style.display = "none";
+                    }
                 }
             }
         }
