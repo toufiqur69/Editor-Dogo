@@ -23,7 +23,7 @@
         /* Top Header */
         header {
             background: #ffffff;
-            padding: 15px 20px;
+            padding: 12px 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -34,7 +34,7 @@
         }
 
         .brand-logo {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 800;
             color: #0f172a;
             display: flex;
@@ -48,17 +48,105 @@
             color: #2563eb;
         }
 
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+        }
+
         .tg-header-btn {
             background: #0088cc;
             color: #ffffff;
-            padding: 8px 16px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 600;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
-            gap: 6px;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.1rem;
+            box-shadow: 0 2px 8px rgba(0, 136, 204, 0.3);
+        }
+
+        /* Menu Button Style */
+        .menu-btn {
+            background: #f1f5f9;
+            color: #334155;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .menu-btn:active {
+            background: #e2e8f0;
+        }
+
+        /* Popup Dropdown Menu */
+        .dropdown-menu {
+            position: absolute;
+            top: 50px;
+            right: 0;
+            background: #ffffff;
+            width: 200px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+            border: 1px solid #e2e8f0;
+            padding: 8px 0;
+            display: none;
+            flex-direction: column;
+            z-index: 200;
+            animation: fadeIn 0.2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .dropdown-menu.active {
+            display: flex;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 18px;
+            text-decoration: none;
+            color: #334155;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: background 0.2s;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .menu-item:hover {
+            background: #f8fafc;
+        }
+
+        /* Colored Menu Icons */
+        .menu-item .fa-house { color: #10b981; }
+        .menu-item .fa-border-all { color: #3b82f6; }
+        .menu-item .fa-paper-plane { color: #0088cc; }
+
+        .menu-footer {
+            font-size: 0.7rem;
+            color: #94a3b8;
+            text-align: center;
+            padding: 8px 0 4px 0;
+            font-weight: 500;
         }
 
         /* Container */
@@ -246,9 +334,31 @@
         <a href="YOUR_TELEGRAM_LINK_HERE" class="brand-logo">
             <span>EDITOR</span> DOGO
         </a>
-        <a href="YOUR_TELEGRAM_LINK_HERE" class="tg-header-btn">
-            <i class="fa-brands fa-telegram"></i> Telegram
-        </a>
+        
+        <div class="header-actions">
+            <a href="YOUR_TELEGRAM_LINK_HERE" class="tg-header-btn">
+                <i class="fa-brands fa-telegram"></i>
+            </a>
+            
+            <!-- Three Bar Button -->
+            <button class="menu-btn" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <!-- Dropdown Popup Menu -->
+            <div class="dropdown-menu" id="dropdownMenu">
+                <a href="YOUR_TELEGRAM_LINK_HERE" class="menu-item">
+                    <i class="fa-solid fa-house"></i> Home
+                </a>
+                <a href="YOUR_TELEGRAM_LINK_HERE" class="menu-item">
+                    <i class="fa-solid fa-border-all"></i> All Apps
+                </a>
+                <a href="YOUR_TELEGRAM_LINK_HERE" class="menu-item">
+                    <i class="fa-solid fa-paper-plane"></i> Join Telegram
+                </a>
+                <div class="menu-footer">© EDITOR DOGO 2026</div>
+            </div>
+        </div>
     </header>
 
     <div class="container">
@@ -337,8 +447,28 @@
         </a>
     </div>
 
-    <!-- Search JavaScript Functionality -->
+    <!-- JavaScript Functionality -->
     <script>
+        // Toggle Dropdown Menu
+        function toggleMenu() {
+            const menu = document.getElementById('dropdownMenu');
+            menu.classList.toggle('active');
+        }
+
+        // Close Menu when clicked outside
+        window.onclick = function(event) {
+            if (!event.target.matches('.menu-btn') && !event.target.matches('.fa-bars')) {
+                const dropdowns = document.getElementsByClassName("dropdown-menu");
+                for (let i = 0; i < dropdowns.length; i++) {
+                    let openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('active')) {
+                        openDropdown.classList.remove('active');
+                    }
+                }
+            }
+        }
+
+        // Search Apps
         function searchApps() {
             let input = document.getElementById('searchInput').value.toLowerCase();
             let cards = document.getElementsByClassName('app-card');
