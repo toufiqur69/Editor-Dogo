@@ -3,130 +3,416 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Earning App - Download Now</title>
+    <title>EasyEarn Pro - Official Website</title>
     <style>
+        /* CSS Reset & General Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', sans-serif; /* আরও আধুনিক ফন্ট */
         }
+
         body {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: #f8fafc;
+            /* প্রিমিয়াম গ্রেডিয়েন্ট ব্যাকগ্রাউন্ড */
+            background: linear-gradient(135deg, #0a0e17 0%, #171f30 100%);
+            color: #e2e8f0;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px;
+            overflow-x: hidden;
+            position: relative;
         }
+        
+        /* ব্যাকগ্রাউন্ডে হালকা গোল গ্লোয়িং এফেক্ট */
+        body::before {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.2) 0%, rgba(56, 189, 248, 0) 70%);
+            top: -100px;
+            left: -100px;
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        body::after {
+            content: "";
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(129, 140, 248, 0.15) 0%, rgba(129, 140, 248, 0) 70%);
+            bottom: -150px;
+            right: -150px;
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        /* Container to center content */
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            padding: 0 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Header Section with Top Padding */
         header {
-            margin-top: 60px; /* স্ট্যাটাস বারের লেখা ঢাকা পড়া ঠিক করা হলো */
+            margin-top: 80px; /* স্ট্যাটাস বার থেকে পর্যাপ্ত দূরত্ব */
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 60px;
         }
+
+        /* App Logo Holder (Optional but makes it pro) */
+        .logo-placeholder {
+            width: 90px;
+            height: 90px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            font-size: 2.5rem;
+            color: #38bdf8;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+
+        /* Heading with more professional look */
         h1 {
-            font-size: 2.2rem;
-            background: linear-gradient(to right, #38bdf8, #818cf8);
+            font-size: 3rem; /* একটু বড় */
+            font-weight: 800;
+            background: linear-gradient(135deg, #38bdf8, #818cf8, #38bdf8);
+            background-size: 200% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            animation: gradientShift 6s ease infinite; /* হালকা কালার শিফট এনিমেশন */
             margin-bottom: 15px;
-            line-height: 1.2;
+            line-height: 1.1;
+            letter-spacing: -1px;
         }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Subtitle */
         p.subtitle {
             color: #94a3b8;
-            font-size: 1rem;
-            max-width: 500px;
-            line-height: 1.5;
-            margin-bottom: 30px;
-            padding: 0 10px;
+            font-size: 1.1rem;
+            max-width: 550px;
+            line-height: 1.6;
+            margin-bottom: 35px;
+            font-weight: 400;
         }
+
+        /* Button styling - sleeker and with animation */
         .btn-container {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-bottom: 50px;
+            margin-bottom: 70px;
         }
+
         .btn {
-            padding: 14px 32px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 36px;
             font-size: 1.05rem;
-            font-weight: 600;
-            border-radius: 12px;
+            font-weight: 700;
+            border-radius: 50px; /* পুরো রাউন্ড বোতাম */
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* bounce transition */
+            position: relative;
+            overflow: hidden;
         }
+
+        /* Primary Button Style */
         .btn-primary {
             background: #2563eb;
             color: #ffffff;
-            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
         }
+
+        /* Ripple effect style on hover */
+        .btn-primary::after {
+            content: "";
+            background: rgba(255, 255, 255, 0.2);
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.5s ease-out;
+            opacity: 0;
+        }
+
         .btn-primary:hover {
             background: #1d4ed8;
-            transform: translateY(-2px);
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(37, 99, 235, 0.45);
         }
+
+        .btn-primary:hover::after {
+            transform: translate(-50%, -50%) scale(4);
+            opacity: 1;
+        }
+        
+        .btn-icon {
+            font-size: 1.2rem;
+        }
+
+        /* Features Section - optimized layout */
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 25px;
             width: 100%;
-            max-width: 800px;
-            margin-bottom: 40px;
+            margin-bottom: 70px;
         }
+
+        /* Card: The core element with glassmorphism and hover animations */
         .card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 20px;
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.03); /* আল্ট্রা হালকা ব্যাকগ্রাউন্ড */
+            border: 1px solid rgba(255, 255, 255, 0.08); /* খুব হালকা বর্ডার */
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(8px); /* গ্লাসি এফেক্ট */
+            -webkit-backdrop-filter: blur(8px);
+            transition: all 0.4s ease; /* স্মুথ ট্রানজিশন */
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
-        .card h3 {
+        
+        /* Card Glowing Light on Hover */
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border-radius: 20px;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.1) 0%, rgba(129, 140, 248, 0.05) 50%, rgba(255, 255, 255, 0) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+        }
+
+        /* Card Hover Animations: Lifting and Glowing */
+        .card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateY(-8px); /* উপরে ভেসে ওঠা */
+            border-color: rgba(56, 189, 248, 0.3); /* গ্লো বর্ডার */
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+        
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        /* Card Icons/Numbers for a Pro feel */
+        .card-icon {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
             color: #38bdf8;
-            margin-bottom: 8px;
-            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: rgba(56, 189, 248, 0.1);
+            border-radius: 15px;
+            transition: all 0.3s ease;
         }
+        
+        .card:hover .card-icon {
+            transform: scale(1.1);
+            background: rgba(56, 189, 248, 0.15);
+        }
+
+        /* Card Text: Professional color grading */
+        .card h3 {
+            color: #f8fafc;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
         .card p {
             color: #cbd5e1;
-            font-size: 0.9rem;
-            line-height: 1.4;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
         }
+        
+        /* "Learn More" link style inside card */
+        .card-link {
+            font-size: 0.9rem;
+            color: #38bdf8;
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: auto;
+            transition: gap 0.3s ease;
+        }
+        
+        .card-link span {
+            font-size: 1.2rem;
+        }
+        
+        .card:hover .card-link {
+            gap: 8px; /* একটু সরে যাবে হভারে */
+        }
+
+        /* Footer: Sleeker design */
         footer {
             margin-top: auto;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 30px 20px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+        }
+        
+        .footer-logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #94a3b8;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .footer-logo strong {
+            color: #38bdf8;
+        }
+
+        .footer-text {
             color: #64748b;
             font-size: 0.85rem;
-            padding: 20px 0;
-            text-align: center;
+            line-height: 1.5;
+            margin-bottom: 15px;
         }
+        
+        .footer-socials {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: #64748b;
+        }
+        
+        .social-link {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .social-link:hover {
+            color: #38bdf8;
+        }
+
+        /* Mobile Adjustments for h1 and card size */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.4rem;
+                padding: 0 10px;
+            }
+            .features {
+                grid-template-columns: 1fr; /* মোবাইল এ এক কলাম */
+                padding: 0 10px;
+            }
+            header {
+                margin-top: 60px;
+            }
+            .card {
+                padding: 25px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.1rem;
+            }
+            .logo-placeholder {
+                width: 75px; height: 75px; font-size: 2.1rem;
+            }
+        }
+        
+        /* Font Import - 'Poppins' for modern feel */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+        
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Free Earning App</h1>
-        <p class="subtitle">Start your daily income journey effortlessly. Fast, secure, and user-friendly platform for everyone.</p>
-        
-        <div class="btn-container">
-            <!-- নিচে href="#" এর জায়গায় আপনার লিংকটি বসিয়ে দেবেন -->
-            <a href="https://t.me/AirdropTips99" class="btn btn-primary">Download APK</a>
-        </div>
-    </header>
+    <div class="container">
+        <header>
+            <!-- প্রফেশনাল লোগো প্লেসহোল্ডার -->
+            <div class="logo-placeholder">₹</div>
+            
+            <h1>EasyEarn Pro</h1>
+            <p class="subtitle">Join thousands of users unlocking daily rewards effortlessly. Experience the fastest, most secure, and modern way to grow your income from your device.</p>
+            
+            <div class="btn-container">
+                <!-- লিংকের জন্য placeholder বাটন -->
+                <a href="https://t.me/editordogo/353" class="btn btn-primary">
+                    <span class="btn-icon">⚡</span>
+                    Start Your Pro Journey Now
+                </a>
+            </div>
+        </header>
 
-    <div class="features">
-        <div class="card">
-            <h3>⚡ Fast Payouts</h3>
-            <p>Get your rewards instantly without any hassle or waiting period.</p>
-        </div>
-        <div class="card">
-            <h3>🔒 Safe & Secure</h3>
-            <p>Your data and earnings are fully protected with top-tier security.</p>
-        </div>
-        <div class="card">
-            <h3>💬 24/7 Support</h3>
-            <p>Our team is always here to assist you whenever you need help.</p>
+        <div class="features">
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="card-icon">⚡</div>
+                <h3>Hyper-Fast Payouts</h3>
+                <p>Enjoy blazing-fast instant withdrawals directly to your BKash/Nagad/Rocket. No waiting days, get your hard-earned rewards when you want them.</p>
+                <a href="#" class="card-link">View Payout Methods <span>→</span></a>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="card-icon">🔒</div>
+                <h3>Fortress Security</h3>
+                <p>Your account, data, and earnings are protected with the latest bank-grade end-to-end encryption. Rest easy knowing your assets are fully safeguarded.</p>
+                <a href="#" class="card-link">Our Security Standards <span>→</span></a>
+            </div>
+            
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="card-icon">🏆</div>
+                <h3>Multi-Stream Income</h3>
+                <p>Don't just watch ads! Access exclusive surveys, app testing, friend referrals, and daily challenges. The more you do, the higher you earn, simple as that.</p>
+                <a href="#" class="card-link">Explore Opportunities <span>→</span></a>
+            </div>
         </div>
     </div>
 
     <footer>
-    &copy; 2026 Toufiqur | All Rights Reserved
-</footer>
+        <span class="footer-logo"><strong>EasyEarn</strong>Pro</span>
+        <p class="footer-text">Developed with care to provide the best digital experience.<br>&copy; 2026 EasyEarn Pro Team. All Rights Reserved.</p>
+        
+        <div class="footer-socials">
+            <a href="#" class="https://t.me/AirdropTips99">TG</a>
+            <a href="#" class="https://www.facebook.com/share/1DVFrupZrR/?mibextid=wwXIfr">FB</a>
+            <a href="#" class="https://x.com/elonmusk">TW</a>
+        </div>
+    </footer>
 
 </body>
 </html>
