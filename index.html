@@ -69,9 +69,17 @@
             color: var(--text-color);
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             text-decoration: none;
             letter-spacing: 0.5px;
+        }
+
+        /* Site Logo Style */
+        .site-logo {
+            width: 34px;
+            height: 34px;
+            border-radius: 8px; /* গোল শেপ চাইলে 50% করে দিন */
+            object-fit: cover;
         }
 
         .brand-logo span {
@@ -200,7 +208,7 @@
             font-size: 1rem;
         }
 
-        /* Welcome Notification Bar (Scrolling Text) */
+        /* Welcome Notification Bar */
         .welcome-bar {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -396,6 +404,8 @@
     <!-- Header -->
     <header>
         <a href="YOUR_TELEGRAM_LINK_HERE" class="brand-logo">
+            <!-- Logo Image Added Here -->
+            <img src="YOUR_LOGO_URL_HERE" alt="Logo" class="site-logo">
             <span>EDITOR</span> DOGO
         </a>
         
@@ -438,7 +448,7 @@
             <input type="text" id="searchInput" onkeyup="searchApps()" placeholder="Search....">
         </div>
 
-        <!-- Notification Bar with Updated Text -->
+        <!-- Notification Bar -->
         <div class="welcome-bar">
             <div class="welcome-icon">
                 <i class="fa-regular fa-bell"></i>
