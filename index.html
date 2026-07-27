@@ -322,18 +322,6 @@
             transform: scale(0.96);
         }
 
-        .pending-badge {
-            position: absolute;
-            top: 8px;
-            right: 8px;
-            background: #f59e0b;
-            color: #000;
-            font-size: 0.6rem;
-            font-weight: 800;
-            padding: 2px 6px;
-            border-radius: 8px;
-        }
-
         .app-icon {
             width: 65px;
             height: 65px;
@@ -345,9 +333,6 @@
             align-items: center;
             justify-content: center;
         }
-
-        .capcut-bg { background: #000000; color: #ffffff; font-size: 28px; }
-        .inshot-bg { background: linear-gradient(135deg, #ff4b5c, #ff6b81); color: #ffffff; font-size: 28px; }
 
         .app-name {
             font-size: 0.85rem;
@@ -373,7 +358,7 @@
             font-weight: 600;
         }
 
-        /* Modal / Popup Details Box Styling */
+        /* Modal / Popup Details Box */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -521,7 +506,7 @@
             color: #ffffff;
         }
 
-        /* Footer Section */
+        /* Footer */
         footer {
             text-align: center;
             padding: 25px 15px;
@@ -535,27 +520,7 @@
             font-weight: 500;
         }
 
-        .footer-links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 8px 12px;
-            font-size: 0.85rem;
-        }
-
-        .footer-links a {
-            color: var(--link-color);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .footer-links span {
-            color: var(--sub-text);
-            opacity: 0.5;
-        }
-
-        /* Bottom Fixed Navigation */
+        /* Bottom Fixed Navigation (Original Style) */
         .bottom-nav {
             position: fixed;
             bottom: 15px;
@@ -579,7 +544,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            font-size: 0.72rem;
+            font-size: 0.75rem;
             font-weight: 600;
             gap: 3px;
             cursor: pointer;
@@ -617,14 +582,11 @@
             </button>
 
             <div class="dropdown-menu" id="dropdownMenu">
-                <div class="menu-item" onclick="filterCategory('trending')">
-                    <i class="fa-solid fa-fire" style="color: #f59e0b;"></i> Trending
+                <div class="menu-item" onclick="filterCategory('home')">
+                    <i class="fa-solid fa-house" style="color: #f59e0b;"></i> Home
                 </div>
-                <div class="menu-item" onclick="filterCategory('all')">
+                <div class="menu-item" onclick="filterCategory('apps')">
                     <i class="fa-solid fa-border-all" style="color: #3b82f6;"></i> All Apps (30+)
-                </div>
-                <div class="menu-item" onclick="filterCategory('pending')">
-                    <i class="fa-solid fa-clock-rotate-left" style="color: #ec4899;"></i> Pending Apps
                 </div>
                 <a href="YOUR_TELEGRAM_LINK_HERE" class="menu-item">
                     <i class="fa-solid fa-paper-plane" style="color: #0088cc;"></i> Join Telegram
@@ -638,7 +600,7 @@
         <!-- Search Bar -->
         <div class="search-box">
             <div class="search-wrapper">
-                <input type="text" id="searchInput" onkeyup="searchApps()" placeholder="Search 30+ apps, tools...">
+                <input type="text" id="searchInput" onkeyup="searchApps()" placeholder="Search....">
                 <i class="fa-solid fa-magnifying-glass search-icon"></i>
                 <button class="clear-btn" id="clearBtn" onclick="clearSearch()">
                     <i class="fa-solid fa-xmark"></i>
@@ -653,236 +615,193 @@
             </div>
             <div class="welcome-text-container">
                 <marquee direction="left" scrollamount="5" behavior="scroll">
-                    Welcome to EDITOR DOGO! All 30+ Mod Apps & Editing Tools are 100% Safe & Tested.
+                    Welcome to our Website! All Apps & Tools are 100% Tested.
                 </marquee>
             </div>
         </div>
 
-        <!-- Section Title -->
+        <!-- Dynamic Title -->
         <div class="section-title" id="sectionTitle">
-            Trending Apps (15)
+            Trending Apps
         </div>
 
-        <!-- Apps Grid (30+ Apps Total) -->
+        <!-- Apps Grid -->
         <div class="apps-grid" id="appsContainer">
 
-            <!-- 1. CapCut Pro -->
+            <!-- 6 Trending Apps (Show on Home) -->
             <div class="app-card trending" onclick="openAppModal('CapCut Pro', 'https://cdn-icons-png.flaticon.com/512/3076/3076416.png', '18.5.0', '250 MB', '2026-07-23', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
-                <div class="app-icon capcut-bg"><i class="fa-solid fa-scissors"></i></div>
+                <img src="https://cdn-icons-png.flaticon.com/512/3076/3076416.png" class="app-icon" alt="CapCut">
                 <div class="app-name">CapCut Pro</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <!-- 2. YouTube Premium -->
-            <div class="app-card trending" onclick="openAppModal('YouTube Premium', 'https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png', '19.20.1', '55 MB', '2026-07-24', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
+            <div class="app-card trending" onclick="openAppModal('YouTube Lite', 'https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png', '19.20.1', '25 MB', '2026-07-24', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" class="app-icon" alt="YouTube">
-                <div class="app-name">YouTube Premium</div>
+                <div class="app-name">YouTube Lite</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <!-- 3. InShot Pro -->
             <div class="app-card trending" onclick="openAppModal('InShot Pro', 'https://cdn-icons-png.flaticon.com/512/3938/3938025.png', '2.0.1', '85 MB', '2026-07-21', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
-                <div class="app-icon inshot-bg"><i class="fa-solid fa-video"></i></div>
+                <img src="https://cdn-icons-png.flaticon.com/512/3938/3938025.png" class="app-icon" alt="InShot">
                 <div class="app-name">InShot Pro</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <!-- 4. Remini AI Pro -->
-            <div class="app-card trending" onclick="openAppModal('Remini AI Pro', 'https://cdn-icons-png.flaticon.com/512/668/668288.png', '3.7.0', '60 MB', '2026-07-18', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
+            <div class="app-card trending" onclick="openAppModal('Remini Pro', 'https://cdn-icons-png.flaticon.com/512/668/668288.png', '3.7.0', '60 MB', '2026-07-18', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="https://cdn-icons-png.flaticon.com/512/668/668288.png" class="app-icon" alt="Remini">
-                <div class="app-name">Remini AI Pro</div>
+                <div class="app-name">Remini Pro</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <!-- 5. Lightroom Pro -->
             <div class="app-card trending" onclick="openAppModal('Lightroom Pro', 'https://cdn-icons-png.flaticon.com/512/5968/5968503.png', '9.1.0', '110 MB', '2026-07-15', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="https://cdn-icons-png.flaticon.com/512/5968/5968503.png" class="app-icon" alt="Lightroom">
                 <div class="app-name">Lightroom Pro</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <!-- 6. Telegram Premium -->
-            <div class="app-card trending" onclick="openAppModal('Telegram Premium', 'https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg', '10.8.0', '70 MB', '2026-07-22', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
+            <div class="app-card trending" onclick="openAppModal('Telegram Pro', 'https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg', '10.8.0', '70 MB', '2026-07-22', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" class="app-icon" alt="Telegram">
-                <div class="app-name">Telegram Premium</div>
+                <div class="app-name">Telegram Pro</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <!-- 7. Alight Motion -->
-            <div class="app-card trending" onclick="openAppModal('Alight Motion Mod', 'https://cdn-icons-png.flaticon.com/512/3670/3670163.png', '5.0.2', '140 MB', '2026-07-20', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
+            <!-- Additional 25+ Apps (Hidden on Home, Shows under 'Apps' Tab) -->
+            <div class="app-card extra" onclick="openAppModal('Alight Motion Mod', 'https://cdn-icons-png.flaticon.com/512/3670/3670163.png', '5.0.2', '140 MB', '2026-07-20', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="https://cdn-icons-png.flaticon.com/512/3670/3670163.png" class="app-icon" alt="Alight Motion">
                 <div class="app-name">Alight Motion</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <!-- 8. KineMaster Pro -->
-            <div class="app-card trending" onclick="openAppModal('KineMaster Pro', 'https://cdn-icons-png.flaticon.com/512/3076/3076416.png', '7.3.1', '125 MB', '2026-07-19', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
+            <div class="app-card extra" onclick="openAppModal('KineMaster Pro', 'https://cdn-icons-png.flaticon.com/512/3076/3076416.png', '7.3.1', '125 MB', '2026-07-19', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="https://cdn-icons-png.flaticon.com/512/3076/3076416.png" class="app-icon" alt="KineMaster">
                 <div class="app-name">KineMaster Pro</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <!-- 9. PicsArt Gold -->
-            <div class="app-card trending" onclick="openAppModal('PicsArt Gold', 'https://cdn-icons-png.flaticon.com/512/3938/3938025.png', '24.2.0', '95 MB', '2026-07-17', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
+            <div class="app-card extra" onclick="openAppModal('PicsArt Gold', 'https://cdn-icons-png.flaticon.com/512/3938/3938025.png', '24.2.0', '95 MB', '2026-07-17', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="https://cdn-icons-png.flaticon.com/512/3938/3938025.png" class="app-icon" alt="PicsArt">
                 <div class="app-name">PicsArt Gold</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <!-- 10. PixelLab Pro -->
-            <div class="app-card trending" onclick="openAppModal('PixelLab Plus', 'https://cdn-icons-png.flaticon.com/512/1006/1006771.png', '2.1.0', '35 MB', '2026-07-16', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
+            <div class="app-card extra" onclick="openAppModal('PixelLab Plus', 'https://cdn-icons-png.flaticon.com/512/1006/1006771.png', '2.1.0', '35 MB', '2026-07-16', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="https://cdn-icons-png.flaticon.com/512/1006/1006771.png" class="app-icon" alt="PixelLab">
                 <div class="app-name">PixelLab Plus</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <!-- 11. Canva Pro -->
-            <div class="app-card trending" onclick="openAppModal('Canva Premium', 'https://cdn-icons-png.flaticon.com/512/3670/3670163.png', '2.250.0', '80 MB', '2026-07-23', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
+            <div class="app-card extra" onclick="openAppModal('Canva Premium', 'https://cdn-icons-png.flaticon.com/512/3670/3670163.png', '2.250.0', '80 MB', '2026-07-23', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="https://cdn-icons-png.flaticon.com/512/3670/3670163.png" class="app-icon" alt="Canva">
                 <div class="app-name">Canva Premium</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <!-- 12. VN Video Editor -->
-            <div class="app-card trending" onclick="openAppModal('VN Editor Pro', 'https://cdn-icons-png.flaticon.com/512/3076/3076416.png', '2.2.1', '160 MB', '2026-07-21', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
+            <div class="app-card extra" onclick="openAppModal('VN Editor Pro', 'https://cdn-icons-png.flaticon.com/512/3076/3076416.png', '2.2.1', '160 MB', '2026-07-21', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="https://cdn-icons-png.flaticon.com/512/3076/3076416.png" class="app-icon" alt="VN Editor">
                 <div class="app-name">VN Editor Pro</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <!-- 13. Snapseed -->
-            <div class="app-card trending" onclick="openAppModal('Snapseed Mod', 'https://cdn-icons-png.flaticon.com/512/668/668288.png', '2.20.0', '30 MB', '2026-07-10', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
+            <div class="app-card extra" onclick="openAppModal('Snapseed Mod', 'https://cdn-icons-png.flaticon.com/512/668/668288.png', '2.20.0', '30 MB', '2026-07-10', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="https://cdn-icons-png.flaticon.com/512/668/668288.png" class="app-icon" alt="Snapseed">
                 <div class="app-name">Snapseed Mod</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <!-- 14. Spotify Premium -->
-            <div class="app-card trending" onclick="openAppModal('Spotify Mod', 'https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg', '8.9.1', '65 MB', '2026-07-24', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
+            <div class="app-card extra" onclick="openAppModal('Spotify Premium', 'https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg', '8.9.1', '65 MB', '2026-07-24', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" class="app-icon" alt="Spotify">
                 <div class="app-name">Spotify Premium</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <!-- 15. MT Manager Pro -->
-            <div class="app-card trending" onclick="openAppModal('MT Manager Pro', 'https://cdn-icons-png.flaticon.com/512/1006/1006771.png', '2.15.0', '22 MB', '2026-07-25', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
+            <div class="app-card extra" onclick="openAppModal('MT Manager VIP', 'https://cdn-icons-png.flaticon.com/512/1006/1006771.png', '2.15.0', '22 MB', '2026-07-25', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="https://cdn-icons-png.flaticon.com/512/1006/1006771.png" class="app-icon" alt="MT Manager">
                 <div class="app-name">MT Manager VIP</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <!-- 16-30+ Other Apps for All Apps Menu -->
-            <div class="app-card all" onclick="openAppModal('Photoshop Express', 'https://cdn-icons-png.flaticon.com/512/5968/5968503.png', '10.5.0', '130 MB', '2026-07-12', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
+            <div class="app-card extra" onclick="openAppModal('Photoshop Express', 'https://cdn-icons-png.flaticon.com/512/5968/5968503.png', '10.5.0', '130 MB', '2026-07-12', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="https://cdn-icons-png.flaticon.com/512/5968/5968503.png" class="app-icon" alt="Photoshop">
                 <div class="app-name">Photoshop Express</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <div class="app-card all" onclick="openAppModal('PowerDirector Pro', 'https://cdn-icons-png.flaticon.com/512/3076/3076416.png', '13.1.0', '115 MB', '2026-07-11', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
+            <div class="app-card extra" onclick="openAppModal('PowerDirector', 'https://cdn-icons-png.flaticon.com/512/3076/3076416.png', '13.1.0', '115 MB', '2026-07-11', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="https://cdn-icons-png.flaticon.com/512/3076/3076416.png" class="app-icon" alt="PowerDirector">
                 <div class="app-name">PowerDirector</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <div class="app-card all" onclick="openAppModal('VITA Editor Pro', 'https://cdn-icons-png.flaticon.com/512/3938/3938025.png', '1.50.0', '98 MB', '2026-07-09', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
+            <div class="app-card extra" onclick="openAppModal('VITA Editor', 'https://cdn-icons-png.flaticon.com/512/3938/3938025.png', '1.50.0', '98 MB', '2026-07-09', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="https://cdn-icons-png.flaticon.com/512/3938/3938025.png" class="app-icon" alt="VITA">
                 <div class="app-name">VITA Editor</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <div class="app-card all" onclick="openAppModal('FilmoraGo Pro', 'https://cdn-icons-png.flaticon.com/512/3076/3076416.png', '9.8.0', '90 MB', '2026-07-08', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
+            <div class="app-card extra" onclick="openAppModal('FilmoraGo Pro', 'https://cdn-icons-png.flaticon.com/512/3076/3076416.png', '9.8.0', '90 MB', '2026-07-08', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="https://cdn-icons-png.flaticon.com/512/3076/3076416.png" class="app-icon" alt="Filmora">
                 <div class="app-name">FilmoraGo Pro</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <div class="app-card all" onclick="openAppModal('Meitu VIP', 'https://cdn-icons-png.flaticon.com/512/668/668288.png', '10.2.0', '150 MB', '2026-07-14', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
+            <div class="app-card extra" onclick="openAppModal('Meitu VIP', 'https://cdn-icons-png.flaticon.com/512/668/668288.png', '10.2.0', '150 MB', '2026-07-14', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="https://cdn-icons-png.flaticon.com/512/668/668288.png" class="app-icon" alt="Meitu">
                 <div class="app-name">Meitu VIP</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <div class="app-card all" onclick="openAppModal('EPIK Photo Pro', 'https://cdn-icons-png.flaticon.com/512/668/668288.png', '4.1.0', '105 MB', '2026-07-13', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
+            <div class="app-card extra" onclick="openAppModal('EPIK AI Editor', 'https://cdn-icons-png.flaticon.com/512/668/668288.png', '4.1.0', '105 MB', '2026-07-13', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="https://cdn-icons-png.flaticon.com/512/668/668288.png" class="app-icon" alt="EPIK">
                 <div class="app-name">EPIK AI Editor</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <div class="app-card all" onclick="openAppModal('Node Video Pro', 'https://cdn-icons-png.flaticon.com/512/3076/3076416.png', '6.2.0', '110 MB', '2026-07-05', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
+            <div class="app-card extra" onclick="openAppModal('Node Video Pro', 'https://cdn-icons-png.flaticon.com/512/3076/3076416.png', '6.2.0', '110 MB', '2026-07-05', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="https://cdn-icons-png.flaticon.com/512/3076/3076416.png" class="app-icon" alt="Node Video">
                 <div class="app-name">Node Video</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <div class="app-card all" onclick="openAppModal('PhotoRoom Pro', 'https://cdn-icons-png.flaticon.com/512/3938/3938025.png', '5.2.0', '50 MB', '2026-07-04', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
+            <div class="app-card extra" onclick="openAppModal('PhotoRoom AI', 'https://cdn-icons-png.flaticon.com/512/3938/3938025.png', '5.2.0', '50 MB', '2026-07-04', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="https://cdn-icons-png.flaticon.com/512/3938/3938025.png" class="app-icon" alt="PhotoRoom">
                 <div class="app-name">PhotoRoom AI</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <div class="app-card all" onclick="openAppModal('InShot Motion', 'https://cdn-icons-png.flaticon.com/512/3938/3938025.png', '1.8.0', '75 MB', '2026-07-02', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
-                <img src="https://cdn-icons-png.flaticon.com/512/3938/3938025.png" class="app-icon" alt="InShot">
-                <div class="app-name">InShot Motion</div>
-                <div class="rating">⭐⭐⭐⭐⭐</div>
-            </div>
-
-            <div class="app-card all" onclick="openAppModal('FaceApp Pro', 'https://cdn-icons-png.flaticon.com/512/668/668288.png', '11.4.0', '48 MB', '2026-07-01', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
+            <div class="app-card extra" onclick="openAppModal('FaceApp Pro', 'https://cdn-icons-png.flaticon.com/512/668/668288.png', '11.4.0', '48 MB', '2026-07-01', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="https://cdn-icons-png.flaticon.com/512/668/668288.png" class="app-icon" alt="FaceApp">
                 <div class="app-name">FaceApp Pro</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <div class="app-card all" onclick="openAppModal('TikTok Mod Pro', 'https://cdn-icons-png.flaticon.com/512/3076/3076416.png', '34.0.0', '135 MB', '2026-07-22', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
+            <div class="app-card extra" onclick="openAppModal('TikTok No Watermark', 'https://cdn-icons-png.flaticon.com/512/3076/3076416.png', '34.0.0', '135 MB', '2026-07-22', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="https://cdn-icons-png.flaticon.com/512/3076/3076416.png" class="app-icon" alt="TikTok">
-                <div class="app-name">TikTok No Watermark</div>
+                <div class="app-name">TikTok Pro</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <div class="app-card all" onclick="openAppModal('Truecaller Gold', 'https://cdn-icons-png.flaticon.com/512/1006/1006771.png', '14.2.0', '60 MB', '2026-07-20', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
+            <div class="app-card extra" onclick="openAppModal('Truecaller Gold', 'https://cdn-icons-png.flaticon.com/512/1006/1006771.png', '14.2.0', '60 MB', '2026-07-20', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="https://cdn-icons-png.flaticon.com/512/1006/1006771.png" class="app-icon" alt="Truecaller">
                 <div class="app-name">Truecaller Gold</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <div class="app-card all" onclick="openAppModal('WPS Office VIP', 'https://cdn-icons-png.flaticon.com/512/1006/1006771.png', '18.1.0', '120 MB', '2026-07-18', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
+            <div class="app-card extra" onclick="openAppModal('WPS Office VIP', 'https://cdn-icons-png.flaticon.com/512/1006/1006771.png', '18.1.0', '120 MB', '2026-07-18', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="https://cdn-icons-png.flaticon.com/512/1006/1006771.png" class="app-icon" alt="WPS">
                 <div class="app-name">WPS Office VIP</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <div class="app-card all" onclick="openAppModal('Termux Extra', 'https://cdn-icons-png.flaticon.com/512/1006/1006771.png', '0.118.0', '95 MB', '2026-07-15', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
+            <div class="app-card extra" onclick="openAppModal('Termux Pro', 'https://cdn-icons-png.flaticon.com/512/1006/1006771.png', '0.118.0', '95 MB', '2026-07-15', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="https://cdn-icons-png.flaticon.com/512/1006/1006771.png" class="app-icon" alt="Termux">
                 <div class="app-name">Termux Pro</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <div class="app-card all" onclick="openAppModal('WhatsApp Plus', 'https://cdn-icons-png.flaticon.com/512/3670/3670163.png', '17.80.0', '72 MB', '2026-07-24', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
+            <div class="app-card extra" onclick="openAppModal('WhatsApp Plus', 'https://cdn-icons-png.flaticon.com/512/3670/3670163.png', '17.80.0', '72 MB', '2026-07-24', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="https://cdn-icons-png.flaticon.com/512/3670/3670163.png" class="app-icon" alt="WhatsApp">
                 <div class="app-name">WhatsApp Plus</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
-            </div>
-
-
-            <!-- PENDING APPS (অল্প কয়েকটি অ্যাপ) -->
-            <div class="app-card pending" onclick="openAppModal('Krita Mobile (Beta)', 'https://cdn-icons-png.flaticon.com/512/3938/3938025.png', '5.2.0', '180 MB', 'Pending', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
-                <span class="pending-badge">Pending</span>
-                <img src="https://cdn-icons-png.flaticon.com/512/3938/3938025.png" class="app-icon" alt="Krita">
-                <div class="app-name">Krita Mobile</div>
-                <div class="rating">⌛ Coming Soon</div>
-            </div>
-
-            <div class="app-card pending" onclick="openAppModal('DaVinci Resolve Android', 'https://cdn-icons-png.flaticon.com/512/3076/3076416.png', '1.0.0', '450 MB', 'Pending', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
-                <span class="pending-badge">Pending</span>
-                <img src="https://cdn-icons-png.flaticon.com/512/3076/3076416.png" class="app-icon" alt="DaVinci">
-                <div class="app-name">DaVinci Mobile</div>
-                <div class="rating">⌛ Coming Soon</div>
-            </div>
-
-            <div class="app-card pending" onclick="openAppModal('Photoshop CC Mobile', 'https://cdn-icons-png.flaticon.com/512/5968/5968503.png', '2026.1', '320 MB', 'Pending', '@EditorDogo', 'YOUR_DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
-                <span class="pending-badge">Pending</span>
-                <img src="https://cdn-icons-png.flaticon.com/512/5968/5968503.png" class="app-icon" alt="Photoshop CC">
-                <div class="app-name">Photoshop CC</div>
-                <div class="rating">⌛ Coming Soon</div>
             </div>
 
         </div>
@@ -920,7 +839,7 @@
 
             <div class="info-box">
                 <span>Description & Information</span>
-                🙋‍♂️ নিচের Download বাটনে ক্লিক করে অ্যাপটি ডাউনলোড করুন এবং ইনস্টল করুন। নিয়মিত নতুন আপডেটের জন্য টেলিগ্রাম চ্যানেলে জয়েন থাকুন। 📲
+                🙋‍♂️ নিচের Download বাটনে ক্লিক করে অ্যাপটি ডাউনলোড করুন। নিয়মিত আপডেটের জন্য আমাদের টেলিগ্রাম চ্যানেলে যুক্ত থাকুন। 📲
             </div>
 
             <div class="modal-actions">
@@ -939,34 +858,17 @@
         <div class="copyright-text">
             © EDITOR DOGO 2026
         </div>
-        <div class="footer-links">
-            <a href="YOUR_TELEGRAM_LINK_HERE">About</a>
-            <span>|</span>
-            <a href="YOUR_TELEGRAM_LINK_HERE">Privacy Policy</a>
-            <span>|</span>
-            <a href="YOUR_TELEGRAM_LINK_HERE">Contact</a>
-            <span>|</span>
-            <a href="YOUR_TELEGRAM_LINK_HERE">DMCA</a>
-            <span>|</span>
-            <a href="YOUR_TELEGRAM_LINK_HERE">Developer</a>
-            <span>|</span>
-            <a href="YOUR_TELEGRAM_LINK_HERE">Telegram</a>
-        </div>
     </footer>
 
-    <!-- Bottom Fixed Navigation -->
+    <!-- Bottom Fixed Navigation (Original Style) -->
     <div class="bottom-nav">
-        <div class="nav-item active" id="navHome" onclick="filterCategory('trending')">
-            <i class="fa-solid fa-fire nav-icon"></i>
-            Trending
+        <div class="nav-item active" id="navHome" onclick="filterCategory('home')">
+            <i class="fa-solid fa-house nav-icon"></i>
+            Home
         </div>
-        <div class="nav-item" id="navAllApps" onclick="filterCategory('all')">
+        <div class="nav-item" id="navApps" onclick="filterCategory('apps')">
             <i class="fa-solid fa-border-all nav-icon"></i>
-            All (30+)
-        </div>
-        <div class="nav-item" id="navPending" onclick="filterCategory('pending')">
-            <i class="fa-solid fa-clock-rotate-left nav-icon"></i>
-            Pending
+            Apps
         </div>
         <a href="YOUR_TELEGRAM_LINK_HERE" class="nav-item">
             <i class="fa-brands fa-telegram nav-icon"></i>
@@ -995,8 +897,8 @@
                 document.body.classList.add('light-theme');
                 document.querySelector('#themeBtn i').className = 'fa-solid fa-moon';
             }
-            // Default view set to Trending
-            filterCategory('trending');
+            // Default view set to Home (6 Trending Apps)
+            filterCategory('home');
         };
 
         function toggleMenu() {
@@ -1040,41 +942,28 @@
             let cards = document.getElementsByClassName('app-card');
             let title = document.getElementById('sectionTitle');
             let navHome = document.getElementById('navHome');
-            let navAllApps = document.getElementById('navAllApps');
-            let navPending = document.getElementById('navPending');
+            let navApps = document.getElementById('navApps');
             let menu = document.getElementById('dropdownMenu');
 
             menu.classList.remove('active');
 
             // Reset active states
             navHome.classList.remove('active');
-            navAllApps.classList.remove('active');
-            navPending.classList.remove('active');
+            navApps.classList.remove('active');
 
-            if (type === 'all') {
+            if (type === 'apps') {
                 title.innerText = `All Apps (${cards.length})`;
-                navAllApps.classList.add('active');
+                navApps.classList.add('active');
 
+                // Show all apps in Apps tab
                 for (let i = 0; i < cards.length; i++) {
                     cards[i].style.display = "flex";
                 }
-            } else if (type === 'pending') {
-                let pendingCards = document.getElementsByClassName('pending');
-                title.innerText = `Pending Apps (${pendingCards.length})`;
-                navPending.classList.add('active');
-
-                for (let i = 0; i < cards.length; i++) {
-                    if (cards[i].classList.contains('pending')) {
-                        cards[i].style.display = "flex";
-                    } else {
-                        cards[i].style.display = "none";
-                    }
-                }
             } else {
-                let trendingCards = document.getElementsByClassName('trending');
-                title.innerText = `Trending Apps (${trendingCards.length})`;
+                title.innerText = `Trending Apps`;
                 navHome.classList.add('active');
 
+                // Show only 6 trending apps in Home tab
                 for (let i = 0; i < cards.length; i++) {
                     if (cards[i].classList.contains('trending')) {
                         cards[i].style.display = "flex";
