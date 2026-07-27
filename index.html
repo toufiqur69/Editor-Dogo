@@ -20,6 +20,8 @@
             --sub-text: #8b949e;
             --link-color: #8b949e;
             --accent-green: #2ea043;
+            --search-focus-border: #3b82f6;
+            --search-glow: rgba(59, 130, 246, 0.25);
         }
 
         body.light-theme {
@@ -34,6 +36,8 @@
             --shadow: rgba(0, 0, 0, 0.05);
             --sub-text: #64748b;
             --link-color: #64748b;
+            --search-focus-border: #2563eb;
+            --search-glow: rgba(37, 99, 235, 0.15);
         }
 
         * {
@@ -177,35 +181,87 @@
             padding: 20px 15px 0 15px;
         }
 
-        /* Search Bar Style */
+        /* --- Updated Professional Search Bar Design --- */
         .search-box {
             position: relative;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .search-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: 100%;
         }
 
         .search-box input {
             width: 100%;
-            padding: 14px 20px 14px 45px;
-            border-radius: 14px;
-            border: 1px solid var(--border-color);
+            height: 52px;
+            padding: 0 45px 0 52px;
+            border-radius: 16px;
+            border: 1.5px solid var(--border-color);
             outline: none;
-            font-size: 0.95rem;
+            font-size: 1rem;
+            font-weight: 500;
             background: var(--card-bg);
             color: var(--text-color);
-            box-shadow: 0 4px 12px var(--shadow);
+            box-shadow: 0 4px 18px var(--shadow);
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .search-box input::placeholder {
+            color: var(--sub-text);
+            font-weight: 400;
+        }
+
+        .search-box input:hover {
+            border-color: rgba(59, 130, 246, 0.4);
         }
 
         .search-box input:focus {
-            border-color: #2563eb;
+            border-color: var(--search-focus-border);
+            box-shadow: 0 0 0 4px var(--search-glow), 0 6px 20px var(--shadow);
         }
 
-        .search-box i {
+        .search-icon {
             position: absolute;
             left: 18px;
             top: 50%;
             transform: translateY(-50%);
             color: var(--sub-text);
-            font-size: 1rem;
+            font-size: 1.1rem;
+            pointer-events: none;
+            transition: color 0.25s ease;
+        }
+
+        .search-box input:focus ~ .search-icon {
+            color: var(--search-focus-border);
+        }
+
+        /* Clear Button (X) */
+        .clear-btn {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--sub-text);
+            border: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .clear-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--text-color);
         }
 
         /* Welcome Notification Bar */
@@ -404,7 +460,7 @@
     <!-- Header -->
     <header>
         <a href="YOUR_TELEGRAM_LINK_HERE" class="brand-logo">
-            <!-- Custom Logo Added -->
+            <!-- Site Logo -->
             <img src="https://bit.ly/itshehzadaProfile" alt="Logo" class="site-logo">
             <span>EDITOR</span> DOGO
         </a>
@@ -442,10 +498,15 @@
     </header>
 
     <div class="container">
-        <!-- Search Bar -->
+        <!-- New Professional Search Bar -->
         <div class="search-box">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" id="searchInput" onkeyup="searchApps()" placeholder="Search....">
+            <div class="search-wrapper">
+                <input type="text" id="searchInput" onkeyup="searchApps()" placeholder="Search apps, tools...">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <button class="clear-btn" id="clearBtn" onclick="clearSearch()">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
         </div>
 
         <!-- Notification Bar -->
@@ -647,15 +708,25 @@
             }
         }
 
+        /* Enhanced Search Logic with Clear Button */
         function searchApps() {
-            let input = document.getElementById('searchInput').value.toLowerCase();
+            let input = document.getElementById('searchInput').value;
+            let clearBtn = document.getElementById('clearBtn');
+            let filterInput = input.toLowerCase();
             let cards = document.getElementsByClassName('app-card');
             let hasResult = false;
+
+            // Show or hide clear button
+            if (input.length > 0) {
+                clearBtn.style.display = "flex";
+            } else {
+                clearBtn.style.display = "none";
+            }
 
             for (let i = 0; i < cards.length; i++) {
                 let appName = cards[i].getElementsByClassName('app-name')[0].innerText.toLowerCase();
                 
-                if (appName.includes(input)) {
+                if (appName.includes(filterInput)) {
                     cards[i].style.display = "flex";
                     hasResult = true;
                 } else {
@@ -665,6 +736,14 @@
 
             let noResultDiv = document.getElementById('no-result');
             noResultDiv.style.display = hasResult ? "none" : "block";
+        }
+
+        /* Clear Search Input */
+        function clearSearch() {
+            let input = document.getElementById('searchInput');
+            input.value = '';
+            searchApps();
+            input.focus();
         }
     </script>
 </body>
