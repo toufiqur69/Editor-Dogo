@@ -55,7 +55,7 @@
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
-            padding-bottom: 110px;
+            padding-bottom: 120px;
         }
 
         /* Top Header */
@@ -514,15 +514,43 @@
         /* Footer */
         footer {
             text-align: center;
-            padding: 25px 15px;
-            margin-top: 10px;
+            padding: 25px 15px 10px 15px;
+            margin-top: 20px;
         }
 
         .copyright-text {
             font-size: 0.85rem;
             color: var(--sub-text);
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             font-weight: 500;
+        }
+
+        /* Footer Links (New) */
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 8px 12px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .footer-links a {
+            color: var(--sub-text);
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-color);
+        }
+
+        .footer-links span {
+            color: var(--border-color);
+            font-size: 0.8rem;
         }
 
         /* Bottom Fixed Navigation */
@@ -760,7 +788,22 @@
     <!-- Footer -->
     <footer>
         <div class="copyright-text">
-            © EDITOR DOGO 2026
+            © EditorDogo.top 2026
+        </div>
+        <div class="footer-links">
+            <a href="#">About</a>
+            <span>|</span>
+            <a href="#">Privacy Policy</a>
+            <span>|</span>
+            <a href="#">Contact</a>
+            <span>|</span>
+            <a href="#">DMCA</a>
+            <span>|</span>
+            <a href="#">Disclaimer</a>
+            <span>|</span>
+            <a href="#">Developer</a>
+            <span>|</span>
+            <a href="YOUR_TELEGRAM_LINK">Telegram</a>
         </div>
     </footer>
 
@@ -858,7 +901,6 @@
                     cards[i].style.display = "flex";
                 }
 
-                // Smooth scroll fix so header doesn't cover content
                 title.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
             } else {
