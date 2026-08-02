@@ -55,13 +55,14 @@
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
-            padding-bottom: 120px;
+            padding-bottom: 160px; /* নেভিগেশন বারের জন্য অতিরিক্ত স্পেস */
+            overflow-x: hidden; /* স্ক্রিন কেটে ডানে চলে যাওয়া বন্ধের জন্য */
         }
 
         /* Top Header */
         header {
             background: var(--header-bg);
-            padding: 12px 20px;
+            padding: 12px 15px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -69,22 +70,23 @@
             position: sticky;
             top: 0;
             z-index: 100;
+            width: 100%;
         }
 
         .brand-logo {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 800;
             color: var(--text-color);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             text-decoration: none;
             letter-spacing: 0.5px;
         }
 
         .site-logo {
-            width: 34px;
-            height: 34px;
+            width: 32px;
+            height: 32px;
             border-radius: 8px;
             object-fit: cover;
         }
@@ -96,35 +98,35 @@
         .header-actions {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             position: relative;
         }
 
         .tg-header-btn {
             background: #0088cc;
             color: #ffffff;
-            width: 38px;
-            height: 38px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            font-size: 1.1rem;
+            font-size: 1.0rem;
             box-shadow: 0 2px 8px rgba(0, 136, 204, 0.3);
         }
 
         .icon-btn {
             background: var(--btn-bg);
             color: var(--btn-text);
-            width: 38px;
-            height: 38px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             border: none;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.1rem;
+            font-size: 1.0rem;
             cursor: pointer;
         }
 
@@ -135,10 +137,10 @@
         /* Dropdown Menu */
         .dropdown-menu {
             position: absolute;
-            top: 50px;
+            top: 48px;
             right: 0;
             background: var(--card-bg);
-            width: 200px;
+            width: 190px;
             border-radius: 16px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             border: 1px solid var(--border-color);
@@ -177,17 +179,18 @@
             font-weight: 500;
         }
 
-        /* Container */
+        /* Container - Margin/Padding Fixed */
         .container {
+            width: 100%;
             max-width: 600px;
             margin: 0 auto;
-            padding: 20px 15px 0 15px;
+            padding: 15px 12px 0 12px;
         }
 
         /* Search Bar */
         .search-box {
             position: relative;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             width: 100%;
         }
 
@@ -200,12 +203,12 @@
 
         .search-box input {
             width: 100%;
-            height: 52px;
-            padding: 0 45px 0 52px;
-            border-radius: 16px;
+            height: 48px;
+            padding: 0 40px 0 45px;
+            border-radius: 14px;
             border: 1.5px solid var(--border-color);
             outline: none;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 500;
             background: var(--card-bg);
             color: var(--text-color);
@@ -225,24 +228,24 @@
 
         .search-icon {
             position: absolute;
-            left: 18px;
+            left: 15px;
             top: 50%;
             transform: translateY(-50%);
             color: var(--sub-text);
-            font-size: 1.1rem;
+            font-size: 1rem;
             pointer-events: none;
         }
 
         .clear-btn {
             position: absolute;
-            right: 15px;
+            right: 12px;
             top: 50%;
             transform: translateY(-50%);
             background: rgba(255, 255, 255, 0.1);
             color: var(--sub-text);
             border: none;
-            width: 24px;
-            height: 24px;
+            width: 22px;
+            height: 22px;
             border-radius: 50%;
             display: none;
             align-items: center;
@@ -255,19 +258,19 @@
         .welcome-bar {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            padding: 12px 18px;
-            border-radius: 16px;
+            padding: 10px 14px;
+            border-radius: 14px;
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin-bottom: 25px;
+            gap: 10px;
+            margin-bottom: 20px;
             box-shadow: 0 4px 15px var(--shadow);
             overflow: hidden;
         }
 
         .welcome-icon {
             color: var(--accent-green);
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -283,35 +286,36 @@
 
         .welcome-text-container marquee {
             color: var(--sub-text);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 500;
             white-space: nowrap;
         }
 
-        /* Section Title with Scroll Offset */
+        /* Section Title */
         .section-title {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 700;
             color: var(--title-color);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
             gap: 8px;
             scroll-margin-top: 80px;
         }
 
-        /* Apps Grid */
+        /* Apps Grid - Gap Adjusted */
         .apps-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-            margin-bottom: 30px;
+            gap: 8px;
+            margin-bottom: 25px;
+            width: 100%;
         }
 
         .app-card {
             background: var(--card-bg);
-            border-radius: 20px;
-            padding: 15px 10px;
+            border-radius: 16px;
+            padding: 12px 6px;
             text-align: center;
             color: inherit;
             box-shadow: 0 4px 15px var(--shadow);
@@ -321,6 +325,8 @@
             align-items: center;
             cursor: pointer;
             position: relative;
+            width: 100%;
+            overflow: hidden;
         }
 
         .app-card:active {
@@ -328,10 +334,10 @@
         }
 
         .app-icon {
-            width: 65px;
-            height: 65px;
-            border-radius: 16px;
-            margin-bottom: 10px;
+            width: 58px;
+            height: 58px;
+            border-radius: 14px;
+            margin-bottom: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
             object-fit: cover;
             display: flex;
@@ -340,19 +346,20 @@
         }
 
         .app-name {
-            font-size: 0.85rem;
+            font-size: 0.78rem;
             font-weight: 700;
             color: var(--text-color);
-            margin-bottom: 4px;
+            margin-bottom: 3px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
             width: 100%;
+            padding: 0 2px;
         }
 
         .rating {
             color: #f59e0b;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
         }
 
         #no-result {
@@ -420,7 +427,7 @@
         }
 
         .modal-title {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 800;
             margin-bottom: 15px;
         }
@@ -437,16 +444,16 @@
         }
 
         .modal-app-icon {
-            width: 75px;
-            height: 75px;
-            border-radius: 18px;
+            width: 70px;
+            height: 70px;
+            border-radius: 16px;
             object-fit: cover;
             flex-shrink: 0;
         }
 
         .app-info-table {
             width: 100%;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
         }
 
         .app-info-table tr td {
@@ -467,7 +474,7 @@
             border: 1px solid var(--border-color);
             border-radius: 16px;
             padding: 12px 15px;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             line-height: 1.5;
             color: var(--sub-text);
             margin-bottom: 15px;
@@ -492,7 +499,7 @@
             border-radius: 14px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -514,24 +521,23 @@
         /* Footer */
         footer {
             text-align: center;
-            padding: 25px 15px 10px 15px;
-            margin-top: 20px;
+            padding: 20px 15px 10px 15px;
+            margin-top: 10px;
         }
 
         .copyright-text {
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             color: var(--sub-text);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             font-weight: 500;
         }
 
-        /* Footer Links (New) */
         .footer-links {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            gap: 8px 12px;
+            gap: 6px 10px;
             max-width: 500px;
             margin: 0 auto;
         }
@@ -539,37 +545,32 @@
         .footer-links a {
             color: var(--sub-text);
             text-decoration: none;
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             font-weight: 500;
-            transition: color 0.2s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--text-color);
         }
 
         .footer-links span {
             color: var(--border-color);
-            font-size: 0.8rem;
+            font-size: 0.75rem;
         }
 
-        /* Bottom Fixed Navigation */
+        /* Bottom Fixed Navigation - Position Fixed for Mobile Safari/Chrome */
         .bottom-nav {
             position: fixed;
-            bottom: 15px;
+            bottom: 80px; /* ব্রাউজার নেভিগেশনের উপরে রাখার জন্য অবস্থান নির্ধারণ */
             left: 50%;
             transform: translateX(-50%);
             width: calc(100% - 30px);
-            max-width: 480px;
+            max-width: 450px;
             background: var(--card-bg);
             border-radius: 50px;
-            padding: 10px 15px;
+            padding: 8px 12px;
             display: flex;
             justify-content: space-around;
             align-items: center;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
             border: 1px solid var(--border-color);
-            z-index: 90;
+            z-index: 999;
         }
 
         .nav-item {
@@ -578,9 +579,9 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             font-weight: 600;
-            gap: 3px;
+            gap: 2px;
             cursor: pointer;
         }
 
@@ -589,7 +590,7 @@
         }
 
         .nav-icon {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
         }
     </style>
 </head>
@@ -664,67 +665,67 @@
 
             <!-- ================= TRENDING APPS (11 টি) ================= -->
 
-            <div class="app-card trending" onclick="openAppModal('CapCut Pro', 'YOUR_IMAGE_LINK', '18.5.0', '250 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'TELEGRAM_LINK')">
+            <div class="app-card trending" onclick="openAppModal('CapCut Pro', 'YOUR_IMAGE_LINK', '18.5.0', '250 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="YOUR_IMAGE_LINK" class="app-icon" alt="CapCut Pro">
                 <div class="app-name">CapCut Pro</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <div class="app-card trending" onclick="openAppModal('InShot Pro', 'YOUR_IMAGE_LINK', '2.0.1', '85 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'TELEGRAM_LINK')">
+            <div class="app-card trending" onclick="openAppModal('InShot Pro', 'YOUR_IMAGE_LINK', '2.0.1', '85 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="YOUR_IMAGE_LINK" class="app-icon" alt="InShot Pro">
                 <div class="app-name">InShot Pro</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <div class="app-card trending" onclick="openAppModal('Alight Motion Mod', 'YOUR_IMAGE_LINK', '5.0.2', '140 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'TELEGRAM_LINK')">
+            <div class="app-card trending" onclick="openAppModal('Alight Motion Mod', 'YOUR_IMAGE_LINK', '5.0.2', '140 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="YOUR_IMAGE_LINK" class="app-icon" alt="Alight Motion Mod">
                 <div class="app-name">Alight Motion</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <div class="app-card trending" onclick="openAppModal('Remini Pro', 'YOUR_IMAGE_LINK', '3.7.0', '60 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'TELEGRAM_LINK')">
+            <div class="app-card trending" onclick="openAppModal('Remini Pro', 'YOUR_IMAGE_LINK', '3.7.0', '60 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="YOUR_IMAGE_LINK" class="app-icon" alt="Remini Pro">
                 <div class="app-name">Remini Pro</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <div class="app-card trending" onclick="openAppModal('Picsart Gold', 'YOUR_IMAGE_LINK', '24.2.0', '95 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'TELEGRAM_LINK')">
+            <div class="app-card trending" onclick="openAppModal('Picsart Gold', 'YOUR_IMAGE_LINK', '24.2.0', '95 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="YOUR_IMAGE_LINK" class="app-icon" alt="Picsart Gold">
                 <div class="app-name">Picsart Gold</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <div class="app-card trending" onclick="openAppModal('Lightroom Pro', 'YOUR_IMAGE_LINK', '9.1.0', '110 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'TELEGRAM_LINK')">
+            <div class="app-card trending" onclick="openAppModal('Lightroom Pro', 'YOUR_IMAGE_LINK', '9.1.0', '110 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="YOUR_IMAGE_LINK" class="app-icon" alt="Lightroom Pro">
                 <div class="app-name">Lightroom Pro</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <div class="app-card trending" onclick="openAppModal('YouTube Premium', 'YOUR_IMAGE_LINK', '19.20.1', '25 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'TELEGRAM_LINK')">
+            <div class="app-card trending" onclick="openAppModal('YouTube Premium', 'YOUR_IMAGE_LINK', '19.20.1', '25 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="YOUR_IMAGE_LINK" class="app-icon" alt="YouTube Premium">
                 <div class="app-name">YouTube Premium</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <div class="app-card trending" onclick="openAppModal('Movie Box Pro', 'YOUR_IMAGE_LINK', '1.0.5', '40 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'TELEGRAM_LINK')">
+            <div class="app-card trending" onclick="openAppModal('Movie Box Pro', 'YOUR_IMAGE_LINK', '1.0.5', '40 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="YOUR_IMAGE_LINK" class="app-icon" alt="Movie Box Pro">
                 <div class="app-name">Movie Box Pro</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <div class="app-card trending" onclick="openAppModal('PhotoRoom Pro', 'YOUR_IMAGE_LINK', '4.2.1', '55 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'TELEGRAM_LINK')">
+            <div class="app-card trending" onclick="openAppModal('PhotoRoom Pro', 'YOUR_IMAGE_LINK', '4.2.1', '55 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="YOUR_IMAGE_LINK" class="app-icon" alt="PhotoRoom Pro">
                 <div class="app-name">PhotoRoom Pro</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <div class="app-card trending" onclick="openAppModal('Hypic Editor', 'YOUR_IMAGE_LINK', '2.8.0', '75 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'TELEGRAM_LINK')">
+            <div class="app-card trending" onclick="openAppModal('Hypic Editor', 'YOUR_IMAGE_LINK', '2.8.0', '75 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="YOUR_IMAGE_LINK" class="app-icon" alt="Hypic Editor">
                 <div class="app-name">Hypic Editor</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <div class="app-card trending" onclick="openAppModal('Magic Eraser', 'YOUR_IMAGE_LINK', '1.4.2', '30 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'TELEGRAM_LINK')">
+            <div class="app-card trending" onclick="openAppModal('Magic Eraser', 'YOUR_IMAGE_LINK', '1.4.2', '30 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="YOUR_IMAGE_LINK" class="app-icon" alt="Magic Eraser">
                 <div class="app-name">Magic Eraser</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
@@ -733,121 +734,121 @@
 
             <!-- ================= ALL APPS / EXTRA (20 টি) ================= -->
 
-            <div class="app-card extra" onclick="openAppModal('KineMaster Pro', 'YOUR_IMAGE_LINK', '7.3.1', '125 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'TELEGRAM_LINK')">
+            <div class="app-card extra" onclick="openAppModal('KineMaster Pro', 'YOUR_IMAGE_LINK', '7.3.1', '125 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="YOUR_IMAGE_LINK" class="app-icon" alt="KineMaster Pro">
                 <div class="app-name">KineMaster Pro</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <div class="app-card extra" onclick="openAppModal('VN Video Editor', 'YOUR_IMAGE_LINK', '2.2.1', '160 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'TELEGRAM_LINK')">
+            <div class="app-card extra" onclick="openAppModal('VN Video Editor', 'YOUR_IMAGE_LINK', '2.2.1', '160 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="YOUR_IMAGE_LINK" class="app-icon" alt="VN Video Editor">
                 <div class="app-name">VN Editor Pro</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <div class="app-card extra" onclick="openAppModal('PixelLab Plus', 'YOUR_IMAGE_LINK', '2.1.0', '35 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'TELEGRAM_LINK')">
+            <div class="app-card extra" onclick="openAppModal('PixelLab Plus', 'YOUR_IMAGE_LINK', '2.1.0', '35 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="YOUR_IMAGE_LINK" class="app-icon" alt="PixelLab Plus">
                 <div class="app-name">PixelLab Plus</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <div class="app-card extra" onclick="openAppModal('PowerDirector', 'YOUR_IMAGE_LINK', '12.0.0', '115 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'TELEGRAM_LINK')">
+            <div class="app-card extra" onclick="openAppModal('PowerDirector', 'YOUR_IMAGE_LINK', '12.0.0', '115 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="YOUR_IMAGE_LINK" class="app-icon" alt="PowerDirector">
                 <div class="app-name">PowerDirector</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <div class="app-card extra" onclick="openAppModal('Meitu VIP', 'YOUR_IMAGE_LINK', '10.5.2', '90 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'TELEGRAM_LINK')">
+            <div class="app-card extra" onclick="openAppModal('Meitu VIP', 'YOUR_IMAGE_LINK', '10.5.2', '90 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="YOUR_IMAGE_LINK" class="app-icon" alt="Meitu VIP">
                 <div class="app-name">Meitu VIP</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <div class="app-card extra" onclick="openAppModal('EPIK AI Editor', 'YOUR_IMAGE_LINK', '3.1.5', '80 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'TELEGRAM_LINK')">
+            <div class="app-card extra" onclick="openAppModal('EPIK AI Editor', 'YOUR_IMAGE_LINK', '3.1.5', '80 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="YOUR_IMAGE_LINK" class="app-icon" alt="EPIK AI Editor">
                 <div class="app-name">EPIK AI Editor</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <div class="app-card extra" onclick="openAppModal('Photo Lab PRO', 'YOUR_IMAGE_LINK', '3.12.0', '65 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'TELEGRAM_LINK')">
+            <div class="app-card extra" onclick="openAppModal('Photo Lab PRO', 'YOUR_IMAGE_LINK', '3.12.0', '65 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="YOUR_IMAGE_LINK" class="app-icon" alt="Photo Lab PRO">
                 <div class="app-name">Photo Lab PRO</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <div class="app-card extra" onclick="openAppModal('SnapTube VIP', 'YOUR_IMAGE_LINK', '7.0.2', '28 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'TELEGRAM_LINK')">
+            <div class="app-card extra" onclick="openAppModal('SnapTube VIP', 'YOUR_IMAGE_LINK', '7.0.2', '28 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="YOUR_IMAGE_LINK" class="app-icon" alt="SnapTube VIP">
                 <div class="app-name">SnapTube VIP</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <div class="app-card extra" onclick="openAppModal('1.1.1.1 VPN WARP+', 'YOUR_IMAGE_LINK', '6.25.0', '32 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'TELEGRAM_LINK')">
+            <div class="app-card extra" onclick="openAppModal('1.1.1.1 VPN WARP+', 'YOUR_IMAGE_LINK', '6.25.0', '32 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="YOUR_IMAGE_LINK" class="app-icon" alt="1.1.1.1 VPN">
                 <div class="app-name">1.1.1.1 VPN</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <div class="app-card extra" onclick="openAppModal('Dual Space Pro', 'YOUR_IMAGE_LINK', '4.1.8', '18 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'TELEGRAM_LINK')">
+            <div class="app-card extra" onclick="openAppModal('Dual Space Pro', 'YOUR_IMAGE_LINK', '4.1.8', '18 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="YOUR_IMAGE_LINK" class="app-icon" alt="Dual Space Pro">
                 <div class="app-name">Dual Space Pro</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <div class="app-card extra" onclick="openAppModal('Clone App VIP', 'YOUR_IMAGE_LINK', '3.5.0', '22 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'TELEGRAM_LINK')">
+            <div class="app-card extra" onclick="openAppModal('Clone App VIP', 'YOUR_IMAGE_LINK', '3.5.0', '22 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="YOUR_IMAGE_LINK" class="app-icon" alt="Clone App VIP">
                 <div class="app-name">Clone App VIP</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <div class="app-card extra" onclick="openAppModal('PLAYit VIP', 'YOUR_IMAGE_LINK', '2.7.5', '45 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'TELEGRAM_LINK')">
+            <div class="app-card extra" onclick="openAppModal('PLAYit VIP', 'YOUR_IMAGE_LINK', '2.7.5', '45 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="YOUR_IMAGE_LINK" class="app-icon" alt="PLAYit VIP">
                 <div class="app-name">PLAYit VIP</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <div class="app-card extra" onclick="openAppModal('MX Player Pro', 'YOUR_IMAGE_LINK', '1.78.0', '50 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'TELEGRAM_LINK')">
+            <div class="app-card extra" onclick="openAppModal('MX Player Pro', 'YOUR_IMAGE_LINK', '1.78.0', '50 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="YOUR_IMAGE_LINK" class="app-icon" alt="MX Player Pro">
                 <div class="app-name">MX Player Pro</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <div class="app-card extra" onclick="openAppModal('SnapEdit Pro', 'YOUR_IMAGE_LINK', '5.2.0', '38 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'TELEGRAM_LINK')">
+            <div class="app-card extra" onclick="openAppModal('SnapEdit Pro', 'YOUR_IMAGE_LINK', '5.2.0', '38 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="YOUR_IMAGE_LINK" class="app-icon" alt="SnapEdit Pro">
                 <div class="app-name">SnapEdit Pro</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <div class="app-card extra" onclick="openAppModal('LightX VIP', 'YOUR_IMAGE_LINK', '2.1.8', '70 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'TELEGRAM_LINK')">
+            <div class="app-card extra" onclick="openAppModal('LightX VIP', 'YOUR_IMAGE_LINK', '2.1.8', '70 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="YOUR_IMAGE_LINK" class="app-icon" alt="LightX VIP">
                 <div class="app-name">LightX VIP</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <div class="app-card extra" onclick="openAppModal('ReLens Camera', 'YOUR_IMAGE_LINK', '3.0.1', '85 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'TELEGRAM_LINK')">
+            <div class="app-card extra" onclick="openAppModal('ReLens Camera', 'YOUR_IMAGE_LINK', '3.0.1', '85 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="YOUR_IMAGE_LINK" class="app-icon" alt="ReLens Camera">
                 <div class="app-name">ReLens Camera</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <div class="app-card extra" onclick="openAppModal('Wink Video Retouch', 'YOUR_IMAGE_LINK', '1.9.0', '110 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'TELEGRAM_LINK')">
+            <div class="app-card extra" onclick="openAppModal('Wink Video Retouch', 'YOUR_IMAGE_LINK', '1.9.0', '110 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="YOUR_IMAGE_LINK" class="app-icon" alt="Wink Video">
                 <div class="app-name">Wink Video</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <div class="app-card extra" onclick="openAppModal('TeraBox Premium', 'YOUR_IMAGE_LINK', '3.24.0', '65 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'TELEGRAM_LINK')">
+            <div class="app-card extra" onclick="openAppModal('TeraBox Premium', 'YOUR_IMAGE_LINK', '3.24.0', '65 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="YOUR_IMAGE_LINK" class="app-icon" alt="TeraBox Premium">
                 <div class="app-name">TeraBox Premium</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <div class="app-card extra" onclick="openAppModal('Spotify Premium', 'YOUR_IMAGE_LINK', '8.9.10', '42 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'TELEGRAM_LINK')">
+            <div class="app-card extra" onclick="openAppModal('Spotify Premium', 'YOUR_IMAGE_LINK', '8.9.10', '42 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="YOUR_IMAGE_LINK" class="app-icon" alt="Spotify Premium">
                 <div class="app-name">Spotify Premium</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
             </div>
 
-            <div class="app-card extra" onclick="openAppModal('Captain AI Editor', 'YOUR_IMAGE_LINK', '1.1.0', '50 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'TELEGRAM_LINK')">
+            <div class="app-card extra" onclick="openAppModal('Captain AI Editor', 'YOUR_IMAGE_LINK', '1.1.0', '50 MB', '2026-08-02', '@EditorDogo', 'DOWNLOAD_LINK', 'YOUR_TELEGRAM_LINK')">
                 <img src="YOUR_IMAGE_LINK" class="app-icon" alt="Captain AI">
                 <div class="app-name">Captain AI</div>
                 <div class="rating">⭐⭐⭐⭐⭐</div>
