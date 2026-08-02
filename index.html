@@ -55,7 +55,7 @@
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
-            padding-bottom: 160px;
+            padding-bottom: 90px;
             overflow-x: hidden;
         }
 
@@ -557,7 +557,8 @@
         /* Bottom Fixed Navigation */
         .bottom-nav {
             position: fixed;
-            bottom: 80px;
+            bottom: 20px;
+            bottom: calc(15px + env(safe-area-inset-bottom, 0px));
             left: 50%;
             transform: translateX(-50%);
             width: calc(100% - 30px);
