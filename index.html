@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>spdadnan - Bio Links</title>
+    <title>EDITOR DOGO - Bio Links</title>
     <!-- Font Awesome Icons CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -30,17 +30,12 @@
         }
 
         .avatar {
-            width: 95px;
-            height: 95px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             margin: 0 auto 15px;
-            background-color: #8ce62c;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 38px;
-            font-weight: bold;
-            color: #000;
+            object-fit: cover;
+            display: block;
             border: 2px solid #000;
         }
 
@@ -114,51 +109,71 @@
             color: #000;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             text-decoration: none;
+            margin-bottom: 25px;
+        }
+
+        /* Developer Footer Style */
+        .footer-credit {
+            font-size: 13px;
+            color: #666;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        .footer-credit a {
+            color: #229ED9;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .footer-credit a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Profile Section -->
+        <!-- Profile Section (logo.png অটোমেটিক লোড হবে) -->
         <div class="profile">
-            <!-- Profile Avatar (SA Logo placeholder) -->
-            <div class="avatar">SA</div>
+            <img src="logo.png" alt="Logo" class="avatar">
             <h2>EDITOR DOGO</h2>
             <p class="tagline">Technology • Digital Awareness</p>
         </div>
 
         <!-- Links Section -->
         <div class="links">
-            <a href="YOUR_TELEGRAM_LINK" class="btn telegram">
+            <a href="https://t.me/editordogo" class="btn telegram">
                 <i class="fab fa-telegram-plane"></i> My Telegram
             </a>
-            <a href="YOUR_TIKTOK_LINK" class="btn tiktok">
+            <a href="https://tiktok.com/@itz_toufiqur" class="btn tiktok">
                 <i class="fab fa-tiktok"></i> My TikTok
             </a>
-            <a href="YOUR_FACEBOOK_LINK" class="btn facebook">
-                <i class="fab fa-facebook-f"></i> My Facebook
-            </a>
-            <a href="YOUR_YOUTUBE_LINK" class="btn youtube">
-                <i class="fab fa-youtube"></i> My YouTube
-            </a>
-            <a href="YOUR_INSTAGRAM_LINK" class="btn instagram">
+            <a href="https://instagram.com/editordogo" class="btn instagram">
                 <i class="fab fa-instagram"></i> My Instagram
+            </a>
+            <a href="https://youtube.com/editordogo" class="btn youtube">
+                <i class="fab fa-youtube"></i> My YouTube
             </a>
         </div>
 
         <!-- Social Icons Section -->
         <div class="social-icons">
-            <a href="mailto:your@email.com"><i class="far fa-envelope"></i></a>
-            <a href="YOUR_TIKTOK_LINK"><i class="fab fa-tiktok"></i></a>
-            <a href="YOUR_TELEGRAM_LINK"><i class="fab fa-telegram-plane"></i></a>
+            <a href="mailto:editordogo@gmail.com"><i class="far fa-envelope"></i></a>
+            <a href="https://tiktok.com/@itz_toufiqur"><i class="fab fa-tiktok"></i></a>
+            <a href="https://t.me/editordogo"><i class="fab fa-telegram-plane"></i></a>
         </div>
 
-        <!-- Featured Banner -->
-        <a href="YOUR_APP_STORE_LINK" class="featured-banner">
+        <!-- Featured Banner (Premium App Store) -->
+        <a href="https://editordogo.com" class="featured-banner">
             <span>Premium App Store</span>
             <i class="fas fa-share-alt"></i>
         </a>
+
+        <!-- Developer Credit Footer -->
+        <div class="footer-credit">
+            Developed by <a href="https://t.me/Toufiqur_Bhai" target="_blank">Toufiqur</a>
+        </div>
     </div>
 
 </body>
