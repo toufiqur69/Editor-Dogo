@@ -1,53 +1,165 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bio Links</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- FontAwesome for Icons -->
+    <title>spdadnan - Bio Links</title>
+    <!-- Font Awesome Icons CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f7f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px 15px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .avatar {
+            width: 95px;
+            height: 95px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            background-color: #8ce62c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 38px;
+            font-weight: bold;
+            color: #000;
+            border: 2px solid #000;
+        }
+
+        .profile h2 {
+            font-size: 24px;
+            font-weight: 800;
+            color: #000;
+            margin-bottom: 8px;
+        }
+
+        .tagline {
+            font-weight: 700;
+            font-size: 15px;
+            color: #111;
+            margin-bottom: 25px;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 12px;
+            font-size: 16px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .btn i {
+            font-size: 18px;
+        }
+
+        .telegram { background: linear-gradient(90deg, #2AABEE, #229ED9); }
+        .tiktok { background: linear-gradient(90deg, #25F4EE, #FE2C55); }
+        .facebook { background: #1877F2; }
+        .youtube { background: #FF0000; }
+        .instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 22px;
+            margin-bottom: 25px;
+            font-size: 24px;
+        }
+
+        .social-icons a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        .featured-banner {
+            background-color: #8ce62c;
+            padding: 16px 20px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 800;
+            font-size: 17px;
+            color: #000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
+
     <div class="container">
         <!-- Profile Section -->
         <div class="profile">
-            <img src="profile.png" alt="Profile Picture" class="avatar">
+            <!-- Profile Avatar (SA Logo placeholder) -->
+            <div class="avatar">SA</div>
             <h2>spdadnan</h2>
             <p class="tagline">Technology • Digital Awareness</p>
         </div>
 
         <!-- Links Section -->
         <div class="links">
-            <a href="#" class="btn telegram">
+            <a href="YOUR_TELEGRAM_LINK" class="btn telegram">
                 <i class="fab fa-telegram-plane"></i> My Telegram
             </a>
-            <a href="#" class="btn tiktok">
+            <a href="YOUR_TIKTOK_LINK" class="btn tiktok">
                 <i class="fab fa-tiktok"></i> My TikTok
             </a>
-            <a href="#" class="btn facebook">
+            <a href="YOUR_FACEBOOK_LINK" class="btn facebook">
                 <i class="fab fa-facebook-f"></i> My Facebook
             </a>
-            <a href="#" class="btn youtube">
+            <a href="YOUR_YOUTUBE_LINK" class="btn youtube">
                 <i class="fab fa-youtube"></i> My YouTube
             </a>
-            <a href="#" class="btn instagram">
+            <a href="YOUR_INSTAGRAM_LINK" class="btn instagram">
                 <i class="fab fa-instagram"></i> My Instagram
             </a>
         </div>
 
         <!-- Social Icons Section -->
         <div class="social-icons">
-            <a href="#"><i class="far fa-envelope"></i></a>
-            <a href="#"><i class="fab fa-tiktok"></i></a>
-            <a href="#"><i class="fab fa-telegram"></i></a>
+            <a href="mailto:your@email.com"><i class="far fa-envelope"></i></a>
+            <a href="YOUR_TIKTOK_LINK"><i class="fab fa-tiktok"></i></a>
+            <a href="YOUR_TELEGRAM_LINK"><i class="fab fa-telegram-plane"></i></a>
         </div>
 
         <!-- Featured Banner -->
-        <div class="featured-banner">
+        <a href="YOUR_APP_STORE_LINK" class="featured-banner">
             <span>Premium App Store</span>
             <i class="fas fa-share-alt"></i>
-        </div>
+        </a>
     </div>
+
 </body>
 </html>
